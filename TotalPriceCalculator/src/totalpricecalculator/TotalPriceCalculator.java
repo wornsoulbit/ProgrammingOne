@@ -16,13 +16,12 @@ public class TotalPriceCalculator {
         double menuPrice = inpPrice.nextDouble();
         
         //Asks the user to input a tip percentage.
-        Scanner tipPrice = new Scanner(System.in);
         System.out.print("Please input a tip percentage: ");
                
         //Sets the menu item price, federal tax, provincal and tip percentage rate. 
         double federalTaxRate =0.05;
         double provincialTaxRate = 0.09975;
-        double tipPercentage = tipPrice.nextDouble()/100; 
+        double tipPercentage = inpPrice.nextDouble()/100; 
         
         //calculates the federal, provincial and the total amount after tax.
         double federalTax = menuPrice * federalTaxRate;
@@ -34,7 +33,8 @@ public class TotalPriceCalculator {
         double finalPrice = menuPrice +totalTax;
         double finalPriceTips = menuPrice + totalTax + tips;
         
-        //prints the federal and provincial tax rate, the total amount of the tips, and the total price with and without tips.
+        //prints the federal and provincial tax rate, the total amount of the 
+        //tips, and the total price with and without tips.
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         System.out.println("Federal tax rate: " + federalTaxRate*100 + "%");
         System.out.println("Provincial tax rate: " + provincialTaxRate*100+ "%");
