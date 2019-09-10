@@ -29,6 +29,7 @@ public class PersonalInfo {
         System.out.print("Enter the value of PI (3.1415926):");
         double pi = input.nextDouble();
         
+        System.out.println("");
         System.out.printf("%-15s: %s\n", "First Name" , fName);
         System.out.printf("%-15s: %s\n", "Last Name" , lName);
         System.out.printf("%-15s: %.0f\n", "Age" , age);
