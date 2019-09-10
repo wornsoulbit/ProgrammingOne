@@ -11,6 +11,7 @@ public class PersonalInfo {
     public static void main(String[] args) {
         
         Scanner input = new Scanner(System.in);
+        
         System.out.print("Enter your First and Last name: ");
         String fName = input.next();
         String lName = input.next();
@@ -29,6 +30,7 @@ public class PersonalInfo {
         System.out.print("Enter the value of PI (3.1415926):");
         double pi = input.nextDouble();
         
+        //Prints out First and Last Name, Age, Gender, Department and the value of PI
         System.out.println("");
         System.out.printf("%-15s: %s\n", "First Name" , fName);
         System.out.printf("%-15s: %s\n", "Last Name" , lName);
