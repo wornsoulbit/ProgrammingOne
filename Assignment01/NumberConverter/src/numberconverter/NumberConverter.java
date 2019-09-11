@@ -32,10 +32,10 @@ public class NumberConverter {
         System.out.println("");
         System.out.printf("%-15s: %d\n", "Octal Number", octNum);
         System.out.printf("%-15s: %.0f\n","Decimal Number", decNum);
-//        System.out.println(octThousand2);
-//        System.out.println(octHundred2);
-//        System.out.println(octTens2);
-//        System.out.println(octOnes);
+        System.out.println(octThousand2);
+        System.out.println(octHundred2);
+        System.out.println(octTens2);
+        System.out.println(octOnes);
     }
     
 }
