@@ -23,7 +23,7 @@ public class PriceCalculator {
         
         //Federal and Provincial Tax Ratio.
         double federalRatio = 0.05; //5%
-        double provincialRatio = 0.0975; //9.975%
+        double provincialRatio = 0.09975; //9.975%
         
         //Calculates the Taxes with the discount then adds it to the total price.
         double federalTax = discountedPrice * federalRatio;
@@ -34,13 +34,13 @@ public class PriceCalculator {
         //Prints out the item price, discount ratio/price, Federal and Provincial Tax
         //then the final price.
         System.out.println("");
-        System.out.printf("%-15s: $%.2f\n", "Original Price", itemPrice);
-        System.out.printf("%-15s: %.2f%%\n", "Discount Ratio", discountRatio);
-        System.out.printf("%-15s: $%.2f\n", "Price before Tax", discountedPrice);
+        System.out.printf("%-20s: $%.2f\n", "Original Price", itemPrice);
+        System.out.printf("%-20s: %.2f%%\n", "Discount Ratio", discountRatio);
+        System.out.printf("%-20s: $%.2f\n", "Price before Tax", discountedPrice);
         System.out.println("-----------------------------------");
-        System.out.printf("%-15s: $%.2f\n", "Federal Tax", federalTax);   
-        System.out.printf("%-15s: $%.2f\n", "Provincial Tax", provincialTax);
-        System.out.printf("%-15s: $%.2f\n", "Final Price", finalPrice);
+        System.out.printf("%-20s: $%.2f\n", "Federal Tax", federalTax);   
+        System.out.printf("%-20s: $%.2f\n", "Provincial Tax", provincialTax);
+        System.out.printf("%-20s: $%.2f\n", "Final Price", finalPrice);
     }
     
 }

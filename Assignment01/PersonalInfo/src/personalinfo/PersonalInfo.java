@@ -15,7 +15,7 @@ public class PersonalInfo {
         System.out.print("Enter your First and Last name: ");
         String fName = input.next();
         String lName = input.next();
-        
+
         System.out.print("Enter your age: ");
         double age = input.nextDouble();
         
