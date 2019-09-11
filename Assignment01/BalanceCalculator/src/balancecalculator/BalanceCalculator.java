@@ -21,13 +21,14 @@ public class BalanceCalculator {
                 + "money in the account: ");
         double numYears = input.nextDouble();
 
-        double totalBal = initBal * Math.pow(1+(intRate / 100 /1),numYears);
+        double totalBal = initBal * Math.pow(1+(intRate / 100), numYears);
         
         
 //        double balWithInt = initBal; 
 //        for (int i = 0; i < numYears; i++) {
 //            balWithInt += balWithInt * intRate / 100;
 //        }
+        
         System.out.println("");
         System.out.printf("%-23s: %9.2f\n", "Inital Balance", initBal);
         System.out.printf("%-23s: %8.2f%%\n", "Annual Interest Rate", intRate);
