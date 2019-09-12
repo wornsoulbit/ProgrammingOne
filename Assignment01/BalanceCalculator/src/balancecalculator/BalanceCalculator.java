@@ -16,13 +16,13 @@ public class BalanceCalculator {
         System.out.print("Please enter the initial balance: ");
         double initBal = input.nextDouble();
         System.out.print("Please enter the annual interest rate: ");
-        double intRate = input.nextDouble();
+        double interestRate = input.nextDouble();
         System.out.print("Please enter the amount of years the client wants the "
                 + "money in the account: ");
         double numYears = input.nextDouble();
 
         //calculates the total bal with interest by using compound interest formula.
-        double totalBal = initBal * Math.pow(1 + (intRate / 100), numYears);
+        double totalBal = initBal * Math.pow(1 + (interestRate / 100), numYears);
         
         //Calculates the balance with interest in a repetative for loop until i 
         //is less than numYears.
@@ -35,7 +35,7 @@ public class BalanceCalculator {
         //years of saving.
         System.out.println("");
         System.out.printf("%-23s: %9.2f\n", "Inital Balance", initBal);
-        System.out.printf("%-23s: %8.2f%%\n", "Annual Interest Rate", intRate);
+        System.out.printf("%-23s: %8.2f%%\n", "Annual Interest Rate", interestRate);
         System.out.printf("%-23s: %9.0f\n", "Years of Saving", numYears);
         System.out.println("------------------------------------");
         System.out.printf("");

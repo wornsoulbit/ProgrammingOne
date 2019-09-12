@@ -23,7 +23,6 @@ public class Counter {
         //Brings the + 3 + 4 up to a string so: "3+4 =" + "3", "3+4 = 3" + "4", "3+4 = 34" 
         System.out.println("3 + 4 = " + 3 + 4);
         System.out.println(3 + 4 + " = 3 + 4");
-        System.out.println('a'.length());
         
     }
     
