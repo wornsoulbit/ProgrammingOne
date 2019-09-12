@@ -9,32 +9,33 @@ import java.util.Scanner;
 public class NumberConverter {
 
     public static void main(String[] args) {
-        
         Scanner input = new Scanner(System.in);
         
-        System.out.print("Please input an octal number: ");
+        //Asks the user to input a 4 digit octal number.
+        System.out.print("Please input a 4-digit octal number: ");
         int octNum = input.nextInt();
         
+        //Determines the digit in the thousandth slot.
         int octThousand = octNum / 1000;
 
+        //Determines the digit in the hundredth slot.
         int octHundred = octNum % 1000;
         int octHundred2 = octHundred / 100;
         
+        //Determines the digit in the tens slot.
         int octTens = octNum % 100;
         int octTens2 = octTens / 10;
         
+        //Determines the digit in the ones slot.
         int octOnes = octNum % 10;
         
+        //Converts the 4-digit Octal number into Decimal.
         double decNum = ((octThousand * Math.pow(8, 3)) + (octHundred2 * Math.pow(8, 2)) 
                 + (octTens2 * Math.pow(8, 1)) + (octOnes * Math.pow(8, 0)));
         
         System.out.println("");
         System.out.printf("%-15s: %d\n", "Octal Number", octNum);
-        System.out.printf("%-15s: %.0f\n","Decimal Number", decNum);
-//        System.out.println(octThousand2);
-//        System.out.println(octHundred2);
-//        System.out.println(octTens2);
-//        System.out.println(octOnes);
+        System.out.printf("%-15s: %.0f\n", "Decimal Number", decNum);
     }
     
 }

@@ -12,16 +12,14 @@ public class PriceCalculator {
         
         Scanner input = new Scanner(System.in);
         
-        //Asks the user to input the price of the item.
         System.out.print("Please enter the price of the item: ");
         double itemPrice = input.nextDouble();
         
-        //Asks the user to input the discount.
         System.out.print("Please enter the discount: ");
         double discountRatio = input.nextDouble();
         double discountedPrice = itemPrice - (itemPrice * discountRatio / 100);
         
-        //Federal and Provincial Tax Ratio.
+        //Federal and Provincial Tax rates.
         double federalRatio = 0.05; //5%
         double provincialRatio = 0.09975; //9.975%
         
@@ -38,7 +36,7 @@ public class PriceCalculator {
         System.out.printf("%-20s: %.2f%%\n", "Discount Ratio", discountRatio);
         System.out.printf("%-20s: $%.2f\n", "Price before Tax", discountedPrice);
         System.out.println("-----------------------------------");
-        System.out.printf("%-20s: $%.2f\n", "Federal Tax", federalTax);   
+        System.out.printf("%-20s: $%.2f\n", "Federal Tax", federalTax);
         System.out.printf("%-20s: $%.2f\n", "Provincial Tax", provincialTax);
         System.out.printf("%-20s: $%.2f\n", "Final Price", finalPrice);
     }
