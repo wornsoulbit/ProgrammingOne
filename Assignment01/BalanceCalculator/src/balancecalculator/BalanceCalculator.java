@@ -11,12 +11,12 @@ public class BalanceCalculator {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+        //Asks the user to input the initial balance, annual interest rate and number 
+        //of years the money will stay in the account.
         System.out.print("Please enter the initial balance: ");
         double initBal = input.nextDouble();
-
         System.out.print("Please enter the annual interest rate: ");
         double intRate = input.nextDouble();
-
         System.out.print("Please enter the amount of years the client wants the "
                 + "money in the account: ");
         double numYears = input.nextDouble();
@@ -26,9 +26,9 @@ public class BalanceCalculator {
         
         //Calculates the balance with interest in a repetative for loop until i 
         //is less than numYears.
-//        double balWithInt = initBal; 
+//        double totalBal = initBal; 
 //        for (int i = 0; i < numYears; i++) {
-//            balWithInt += balWithInt * intRate / 100;
+//            totalBal += totalBal * intRate / 100;
 //        }
         
         //Prints initial balance, interest rate, years of saving and balance after x
@@ -41,9 +41,6 @@ public class BalanceCalculator {
         System.out.printf("");
         System.out.printf("%s %.0f %-7s: $%8.2f\n", "Balance After", numYears, 
                 "Years", totalBal);
-        //sout for the for loop variant.
-//        System.out.printf("%s %.0f %-7s: $%8.2f\n", "Balance After", numYears, 
-//                "Years", balWithInt);
     }
     
 }
