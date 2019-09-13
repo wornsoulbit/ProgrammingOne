@@ -14,6 +14,8 @@ public class EmailExtractor {
         
         System.out.print("Please enter your email address: ");
         String email = input.nextLine();
+        email = email.toLowerCase();
+        
         int idxAtSign = email.indexOf('@');
         
         String emailAddress = email.substring(0, idxAtSign);
