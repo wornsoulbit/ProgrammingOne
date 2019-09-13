@@ -15,8 +15,11 @@ public class PriceCalculator {
         //Asks the user to input the price of the item and the discount.
         System.out.print("Please enter the price of the item: ");
         double itemPrice = input.nextDouble();
+        
         System.out.print("Please enter the discount: ");
         double discountRatio = input.nextDouble();
+        
+        //Calculates the discounted price.
         double discountedPrice = itemPrice - (itemPrice * discountRatio / 100);
         
         //Federal and Provincial Tax rates.

@@ -19,19 +19,17 @@ public class NumberConverter {
         int octThousand = octNum / 1000;
 
         //Determines the digit in the hundredth slot.
-        int octHundred = octNum % 1000;
-        int octHundred2 = octHundred / 100;
+        int octHundred = (octNum % 1000) / 100;
         
         //Determines the digit in the tens slot.
-        int octTens = octNum % 100;
-        int octTens2 = octTens / 10;
+        int octTens = (octNum % 100) / 10;
         
         //Determines the digit in the ones slot.
         int octOnes = octNum % 10;
         
         //Converts the 4-digit Octal number into Decimal.
-        double decNum = ((octThousand * Math.pow(8, 3)) + (octHundred2 * Math.pow(8, 2)) 
-                + (octTens2 * Math.pow(8, 1)) + (octOnes * Math.pow(8, 0)));
+        double decNum = ((octThousand * Math.pow(8, 3)) + (octHundred * Math.pow(8, 2)) 
+                + (octTens * Math.pow(8, 1)) + (octOnes * Math.pow(8, 0)));
         
         System.out.println("");
         System.out.printf("%-15s: %d\n", "Octal Number", octNum);

@@ -12,19 +12,21 @@ public class PersonalInfo {
         
         Scanner input = new Scanner(System.in);
         
-        //Asks the user to input their first and last name, their age, gender, and 
-        //what department they're apart.
+        //Asks the user to input their first and last name, their age, gender,
+        //what department they're apart, and whats the value of PI.
         System.out.print("Enter your First and Last name: ");
         String fName = input.next();
         String lName = input.next();
+        
         System.out.print("Enter your age: ");
         int age = input.nextInt();
+        
         System.out.print("Enter your gender: ");
         String gender = input.next();
+        
         System.out.print("Enter your department: ");
         String depart1 = input.next();
         String depart2 = input.nextLine();
-
         
         System.out.print("Enter the value of PI (3.1415926): ");
         double pi = input.nextDouble();
