@@ -19,7 +19,7 @@ public class EmailExtractor {
         int idxAtSign = email.indexOf('@');
         
         String emailAddress = email.substring(0, idxAtSign);
-        String hostProvider = email.substring(idxAtSign + 1);
+        String hostProvider = email.substring(idxAtSign + 1).trim();
         
         System.out.printf("%-21s: %s\n", "Your email address is", emailAddress);
         System.out.printf("%-21s: %s\n", "The host provider is", hostProvider);
