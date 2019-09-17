@@ -28,7 +28,7 @@ public class NumberConverter {
         int octOnes = octNum % 10;
         
         //Converts the 4-digit Octal number into Decimal.
-        double decNum = ((octThousand * Math.pow(8, 3)) + (octHundred * Math.pow(8, 2)) 
+        double decNum = ((octThousand * Math.pow(8, 3)) + (octHundred * Math.pow(8, 2))
                 + (octTens * Math.pow(8, 1)) + (octOnes * Math.pow(8, 0)));
         
         System.out.println("");
