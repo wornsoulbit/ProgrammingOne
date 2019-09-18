@@ -11,16 +11,17 @@ public class BirthYearCalculator {
     public static void main(String[] args) {
         
         Scanner input = new Scanner(System.in);
+        
         System.out.print("Please enter a four digit birth year: ");
         String birthYear = input.nextLine().trim();
         
         String centurySub = birthYear.substring(0, 2); 
         String decade = birthYear.substring(2, 3); 
 
-        int century = Integer.parseInt(centurySub);
+        int century = Integer.parseInt(centurySub) + 1;
         
         System.out.printf("%-10s: %s\n", "Birth Year", birthYear);
-        System.out.printf("%-10s: %s\n", "Century", century + 1);
+        System.out.printf("%-10s: %s\n", "Century", century);
         System.out.printf("%-10s: %s\n", "Decade", decade + 0);
     }
     
