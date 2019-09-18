@@ -28,8 +28,8 @@ public class SimpleStatisticCalculator {
                 Math.max(fourthNum, fifthNum))));
         
         double stdDev = Math.sqrt((Math.pow((firstNum - mean), 2) + Math.pow(
-                (secondNum - mean), 2) + Math.pow((thirdNum - mean), 2)
-                + Math.pow((fourthNum - mean), 2) + Math.pow((fifthNum - mean), 2)) / 5);
+                (secondNum - mean), 2) + Math.pow((thirdNum - mean), 2) + Math.pow(
+                (fourthNum - mean), 2) + Math.pow((fifthNum - mean), 2)) / 5);
         
         System.out.printf("%-20s: %.2f, %.2f, %.2f, %.2f, %.2f\n", "Numbers", firstNum,
                 secondNum, thirdNum, fourthNum, fifthNum);

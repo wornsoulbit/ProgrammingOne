@@ -14,13 +14,13 @@ public class BirthYearCalculator {
         System.out.print("Please enter a birth year: ");
         String birthYear = input.nextLine().trim();
         
-        String century = birthYear.substring(0, 2);
+        String centurySub = birthYear.substring(0, 2);
         String decade = birthYear.substring(2, 3);
 
-        int century2 = Integer.parseInt(century);
+        int century = Integer.parseInt(centurySub);
         
         System.out.printf("%-10s: %s\n", "Birth Year", birthYear);
-        System.out.printf("%-10s: %s\n", "Century", century2 + 1);
+        System.out.printf("%-10s: %s\n", "Century", century + 1);
         System.out.printf("%-10s: %s\n", "Decade", decade + 0);
     }
     
