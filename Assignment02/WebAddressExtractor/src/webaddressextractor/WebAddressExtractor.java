@@ -17,7 +17,7 @@ public class WebAddressExtractor {
         String webAddress = input.nextLine();
         webAddress = webAddress.toLowerCase();
         
-        int idxDot = webAddress.charAt('.');
+        int idxDot = webAddress.indexOf('.');
         String heading = webAddress.substring(0, idxDot);
         String str = webAddress.substring(idxDot + 1);
         
@@ -26,7 +26,6 @@ public class WebAddressExtractor {
         String company = str.substring(0, idxDotTwo);
         String extension = str.substring(idxDotTwo + 1);
         
-        System.out.println(idxDot);
         System.out.printf("%-10s: %s\n", "Address" ,webAddress);
         System.out.printf("%-10s: %s\n", "Heading" ,heading);
         System.out.printf("%-10s: %s\n", "Company" ,company);
