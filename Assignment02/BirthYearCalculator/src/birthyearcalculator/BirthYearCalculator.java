@@ -21,8 +21,8 @@ public class BirthYearCalculator {
         int century = Integer.parseInt(centurySub) + 1;
         
         System.out.printf("%-10s: %s\n", "Birth Year", birthYear);
-        System.out.printf("%-10s: %s\n", "Century", century);
-        System.out.printf("%-10s: %s\n", "Decade", decade + 0);
+        System.out.printf("%-10s: %4s\n", "Century", century);
+        System.out.printf("%-10s: %4s\n", "Decade", decade + 0);
     }
     
 }
