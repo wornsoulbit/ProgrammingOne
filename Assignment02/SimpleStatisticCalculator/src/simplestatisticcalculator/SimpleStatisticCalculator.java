@@ -22,16 +22,16 @@ public class SimpleStatisticCalculator {
         
         double mean = (firstNum + secondNum + thirdNum + fourthNum + fifthNum) / 5;
         
-        double minNum = Math.min(firstNum, Math.min(secondNum, Math.min(thirdNum, 
-                Math.min(fourthNum, fifthNum))));
-        double maxNum = Math.max(firstNum, Math.max(secondNum, Math.max(thirdNum, 
+        double minNum = Math.min(firstNum, Math.min(secondNum, Math.min(thirdNum,
+            Math.min(fourthNum, fifthNum))));
+        double maxNum = Math.max(firstNum, Math.max(secondNum, Math.max(thirdNum,
                 Math.max(fourthNum, fifthNum))));
         
         double stdDev = Math.sqrt((Math.pow((firstNum - mean), 2) + Math.pow(
-                (secondNum - mean), 2) + Math.pow((thirdNum - mean), 2) 
+                (secondNum - mean), 2) + Math.pow((thirdNum - mean), 2)
                 + Math.pow((fourthNum - mean), 2) + Math.pow((fifthNum - mean), 2)) / 5);
         
-        System.out.printf("%-20s: %.2f, %.2f, %.2f, %.2f, %.2f\n", "Numbers", firstNum, 
+        System.out.printf("%-20s: %.2f, %.2f, %.2f, %.2f, %.2f\n", "Numbers", firstNum,
                 secondNum, thirdNum, fourthNum, fifthNum);
         System.out.printf("%-20s: %.2f\n", "Mean", mean);
         System.out.printf("%-20s: %.2f\n", "Minimum", minNum);
