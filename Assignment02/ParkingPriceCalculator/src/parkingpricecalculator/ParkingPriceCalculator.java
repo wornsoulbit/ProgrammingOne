@@ -25,7 +25,7 @@ public class ParkingPriceCalculator {
         
         System.out.printf("%-24s: %.0f\n", "Parking time (minutes)", numMin);
         System.out.printf("%-24s: %.0f\n", "Parking time (hour)", numHour);
-        System.out.printf(outPrice);
+        System.out.print(outPrice);
     }
     
 }
