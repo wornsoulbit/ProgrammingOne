@@ -20,12 +20,10 @@ public class ParkingPriceCalculator {
         double numHour = Math.ceil(numMin / 60);
         
         double price = numHour * parkingCost;
-        
-        String outPrice = String.format("%-24s: $%.2f\n", "Price", price);
-        
+                
         System.out.printf("%-24s: %.0f\n", "Parking time (minutes)", numMin);
         System.out.printf("%-24s: %.0f\n", "Parking time (hour)", numHour);
-        System.out.print(outPrice);
+        System.out.printf("%-24s: $%.2f\n", "Price", price);
     }
     
 }
