@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Asks the user to input the amount of time they've been parked and calculate the 
  * cost of the parking for the amount of time they've spent.
- * @author cstuser
+ * @author Alexander Vasil
  */
 public class ParkingPriceCalculator {
 
