@@ -11,12 +11,14 @@ public class YearConvertor {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.print("Please enter a 4 digit year: ");
         
+        System.out.print("Please enter a 4 digit year: ");
         String year = input.next();
         
-        System.out.printf("\nThe century: %d\n",calcCentury(year));
-        System.out.printf("The decade: %d%s\n", calcDecade(year), "\'s");
+        int century = calcCentury(year);
+        int decade = calcDecade(year);
+        
+        printResult(year, century, decade);
     }
 
     /**
@@ -38,5 +40,16 @@ public class YearConvertor {
     public static int calcDecade(String year){
         return Integer.parseInt(year.substring(2, 3) + 0);
     }
-
+    /**
+     * Prints the year, century and decade.
+     * 
+     * @param year the original year.
+     * @param century the century of the year.
+     * @param decade the decade of the year.
+     */
+    public static void printResult(String year, int century, int decade){
+        System.out.printf("\n%-10s: %s\n", "Year", year);
+        System.out.printf("%-10s: %d\n", "Century", century);
+        System.out.printf("%-10s: %d%s\n", "Decade", decade, "\'s");
+    }
 }
