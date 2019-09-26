@@ -14,29 +14,29 @@ public class SimpleStatisticCalculator {
         Scanner input = new Scanner(System.in);
         
         System.out.print("Please input 5 numbers seperated by spaces: ");
-        double firstNum = input.nextDouble();
-        double secondNum = input.nextDouble();
-        double thirdNum = input.nextDouble();
-        double fourthNum = input.nextDouble();
-        double fifthNum = input.nextDouble();
+        double numOne = input.nextDouble();
+        double numTwo = input.nextDouble();
+        double numThree = input.nextDouble();
+        double numFour = input.nextDouble();
+        double numFive = input.nextDouble();
         
-        double mean = (firstNum + secondNum + thirdNum 
-                + fourthNum + fifthNum) / 5;
+        double mean = (numOne + numTwo + numThree 
+                + numFour + numFive) / 5;
         
-        double minNum = Math.min(firstNum, Math.min(secondNum, 
-                Math.min(thirdNum, Math.min(fourthNum, fifthNum))));
+        double minNum = Math.min(numOne, Math.min(numTwo, 
+                Math.min(numThree, Math.min(numFour, numFive))));
         
-        double maxNum = Math.max(firstNum, Math.max(secondNum, 
-                Math.max(thirdNum, Math.max(fourthNum, fifthNum))));
+        double maxNum = Math.max(numOne, Math.max(numTwo, 
+                Math.max(numThree, Math.max(numFour, numFive))));
         
-        double stdDev = Math.sqrt((Math.pow((firstNum - mean), 2) 
-                + Math.pow((secondNum - mean), 2) 
-                + Math.pow((thirdNum - mean), 2) 
-                + Math.pow((fourthNum - mean), 2)
-                + Math.pow((fifthNum - mean), 2)) / 5);
+        double stdDev = Math.sqrt((Math.pow(numOne - mean, 2) 
+                + Math.pow(numTwo - mean, 2) 
+                + Math.pow(numThree - mean, 2) 
+                + Math.pow(numFour - mean, 2)
+                + Math.pow(numFive - mean, 2)) / 5);
         
         System.out.printf("%-20s: %.2f, %.2f, %.2f, %.2f, %.2f\n", "Numbers",
-                firstNum, secondNum, thirdNum, fourthNum, fifthNum);
+                numOne, numTwo, numThree, numFour, numFive);
         System.out.printf("%-20s: %.2f\n", "Mean", mean);
         System.out.printf("%-20s: %.2f\n", "Minimum", minNum);
         System.out.printf("%-20s: %.2f\n", "Maximum", maxNum);
