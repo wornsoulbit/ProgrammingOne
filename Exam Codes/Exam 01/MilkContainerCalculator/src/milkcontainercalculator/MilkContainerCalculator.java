@@ -32,7 +32,7 @@ public class MilkContainerCalculator {
         
         double containerAmount = Math.floor(milkRemain / containerCap);
         double finalCost = containerAmount * containerPrice;
-        double govCost = finalCost * govRebate; 
+        double govCost = finalCost * govRebate;
         double compCost = finalCost - govCost;
         
         System.out.printf("\n%-40s: %10.2f\n", 
