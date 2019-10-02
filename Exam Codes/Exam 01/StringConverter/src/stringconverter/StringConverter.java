@@ -18,13 +18,13 @@ public class StringConverter {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         
-        System.out.printf("Please enter a string, with - inside:\n");
+        System.out.print("Please enter a string, with - inside: ");
         
-        String userInput = input.nextLine().toLowerCase();
+        String userInput = input.nextLine();
         int idxDash = userInput.indexOf("-");
         
         String formatStr = userInput.substring(0, idxDash).toUpperCase();
-        String formatStr2 = userInput.substring(idxDash + 1);
+        String formatStr2 = userInput.substring(idxDash + 1).toLowerCase();
         
         String jointStr = String.format("%s%s%s", formatStr, "---", formatStr2);
         
