@@ -3,7 +3,8 @@ package basiccalculator;
 import java.util.Scanner;
 
 /**
- *
+ * A basic calculator that can add, subtract, divide, and multiply.
+ * 
  * @author Alexander Vasil
  */
 public class BasicCalculator {
