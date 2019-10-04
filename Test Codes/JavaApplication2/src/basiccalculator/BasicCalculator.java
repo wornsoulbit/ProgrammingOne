@@ -26,8 +26,11 @@ public class BasicCalculator {
             result = calcSubtract(num1, num2);
         } else if (oper == '*') {
             result = calcMultiply(num1, num2);
-        } else {
+        } else if (oper == '/'){
             result = calcDivide(num1, num2);
+        } else {
+            System.out.println("The chosen operator is invalid.");
+            return;
         }
 
         System.out.printf("%.2f %c %.2f = %.2f\n", num1, oper, num2, result);
