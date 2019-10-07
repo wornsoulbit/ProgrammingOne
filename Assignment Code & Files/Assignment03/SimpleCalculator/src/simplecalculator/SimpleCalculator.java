@@ -13,16 +13,22 @@ public class SimpleCalculator {
         Scanner input = new Scanner(System.in);
 
         System.out.print("Please enter two numbers, seperated by a space: ");
-        int num1 = input.nextInt();
-        int num2 = input.nextInt();
+        double num1 = input.nextDouble();
+        double num2 = input.nextDouble();
 
         System.out.print("Please choose an operation: (+, -, *, /): ");
         char oper = input.next().charAt(0);
         input.nextLine();
+        
         System.out.print("Please enter a formula: e.g. \"3.14 * 2\": ");
         String formula = input.nextLine();
         
-        System.out.println(calcResult("3.14 * 2"));
+        System.out.printf("\nCalling the first method: %.2f + %.2f = %.2f\n",
+                num1, num2, calcResult(num1, num2));
+        System.out.printf("Calling the second method: %.2f %c %.2f = %.2f\n",
+                num1, oper, num2, calcResult(num1, num2, oper));
+        System.out.printf("Calling the third method: %s = %.2f",
+                formula, calcResult(formula));
     }
 
     /**
@@ -37,7 +43,7 @@ public class SimpleCalculator {
     }
 
     /**
-     * calculate based on the operator with two numbers.
+     * Calculate based on the operator with two numbers.
      *
      * @param num1 number 1.
      * @param num2 number 2.
@@ -55,10 +61,30 @@ public class SimpleCalculator {
             return num1 / num2;
         }
     }
-
+    
+    
+    /**
+     * Calculate the value based on the numbers and the operators in the string.
+     * 
+     * @param formula the string to be calculated.
+     * @return the result based on the string.
+     */
     public static double calcResult(String formula) {
-        int firstNumLength = formula.indexOf(' ');
-        double firstNum = Integer.parseInt(formula.substring(0, firstNumLength + 1));
-        return firstNum;
+        int idxSpace = formula.indexOf(' ');
+        int lastIdxSpace = formula.lastIndexOf(' ');
+        
+        double num1 = Double.parseDouble(formula.substring(0, idxSpace));
+        double num2 = Double.parseDouble(formula.substring(lastIdxSpace + 1));
+        char oper = formula.substring(idxSpace + 1, lastIdxSpace).charAt(0);
+        
+        if (oper == '+') {
+            return num1 + num2;
+        } else if (oper == '-') {
+            return num1 - num2;
+        } else if (oper == '*') {
+            return num1 * num2;
+        } else {
+            return num1 / num2;
+        }
     }
 }
