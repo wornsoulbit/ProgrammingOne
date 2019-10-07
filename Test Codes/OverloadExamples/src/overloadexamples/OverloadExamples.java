@@ -102,12 +102,18 @@ public class OverloadExamples {
      * @return the largest number out of the three.
      */
     public static double max(double num1, double num2, double num3) {
-        return max(max(num1, num2), num3);
+        if (num1 > num2 && num1 > num3) {
+            return num1;
+        } else if (num2 > num1 && num2 > num3) {
+            return num2;
+        } else {
+            return num3;
+        }
     }
-    
+
     /**
      * Find the smallest number from two numbers.
-     * 
+     *
      * @param num1 the 1st number.
      * @param num2 the 2nd number.
      * @return the smallest number out of the two.
@@ -119,16 +125,22 @@ public class OverloadExamples {
             return num2;
         }
     }
-    
+
     /**
      * Find the smallest number from three numbers.
-     * 
+     *
      * @param num1 the 1st number.
      * @param num2 the 2nd number.
      * @param num3 the 3rd number.
      * @return the smallest number out of the three.
      */
     public static double min(double num1, double num2, double num3) {
-        return min(min(num1, num2), num3);
+        if (num1 < num2 && num1 < num3) {
+            return num1;
+        } else if (num2 < num1 && num2 < num3) {
+            return num2;
+        } else {
+            return num3;
+        }
     }
 }
