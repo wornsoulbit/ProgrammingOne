@@ -17,9 +17,9 @@ public class BasicCalculator {
         double num2 = input.nextDouble();
 
         System.out.print("Please select an operation: +, -, *, /: ");
-
+         
         char oper = input.next().charAt(0);
-
+        
         double result;
         if (oper == '+') {
             result = calcSum(num1, num2);
