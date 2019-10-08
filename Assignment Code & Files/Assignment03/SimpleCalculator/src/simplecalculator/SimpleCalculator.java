@@ -21,13 +21,13 @@ public class SimpleCalculator {
         input.nextLine();
         
         System.out.print("Please enter a formula: e.g. \"3.14 * 2\": ");
-        String formula = input.nextLine();
+        String formula = input.nextLine().trim();
         
-        System.out.printf("\nCalling the first method: %.2f + %.2f = %.2f\n",
-                num1, num2, calcResult(num1, num2));
-        System.out.printf("Calling the second method: %.2f %c %.2f = %.2f\n",
-                num1, oper, num2, calcResult(num1, num2, oper));
-        System.out.printf("Calling the third method: %s = %.2f",
+        System.out.printf("\n%-25s: %.2f + %.2f = %.2f\n", "Calling the first"
+                + " method", num1, num2, calcResult(num1, num2));
+        System.out.printf("%-25s: %.2f %c %.2f = %.2f\n", "Calling the second "
+                + "method", num1, oper, num2, calcResult(num1, num2, oper));
+        System.out.printf("%-25s: %s = %.2f\n", "Calling the third method", 
                 formula, calcResult(formula));
     }
 
