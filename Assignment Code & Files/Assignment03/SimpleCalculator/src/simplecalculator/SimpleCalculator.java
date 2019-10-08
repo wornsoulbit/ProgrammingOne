@@ -76,7 +76,7 @@ public class SimpleCalculator {
         double num1 = Double.parseDouble(formula.substring(0, idxSpace));
         double num2 = Double.parseDouble(formula.substring(lastIdxSpace + 1));
         char oper = formula.substring(idxSpace + 1, lastIdxSpace).charAt(0);
-
+        
         switch (oper) {
             case '+':
                 return num1 + num2;

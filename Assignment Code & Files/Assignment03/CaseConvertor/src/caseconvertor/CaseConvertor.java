@@ -62,17 +62,23 @@ public class CaseConvertor {
      */
     public static String convertCase(String word, char caseType) {
         String newWord = word.trim();
-        switch (caseType) {
-            case 'l':
-            case 'L':
-                return newWord.toLowerCase();
-            case 'u':
-            case 'U':
-                return newWord.toUpperCase();
-            default:
-                return Character.toUpperCase(newWord.charAt(0))
-                        + newWord.substring(1);
-
-        }
+        
+        if (caseType == 'l' || caseType == 'L') 
+            return newWord.toLowerCase();
+        else if (caseType == 'u' || caseType == 'U')
+            return newWord.toUpperCase();
+        else 
+            return toTitleCase(word);
+//        switch (caseType) {
+//            case 'l':
+//            case 'L':
+//                return newWord.toLowerCase();
+//            case 'u':
+//            case 'U':
+//                return newWord.toUpperCase();
+//            default:
+//                return Character.toUpperCase(newWord.charAt(0))
+//                        + newWord.substring(1);
+//        }
     }
 }
