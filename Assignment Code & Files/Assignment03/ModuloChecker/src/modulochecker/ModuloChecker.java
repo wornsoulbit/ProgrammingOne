@@ -17,15 +17,7 @@ public class ModuloChecker {
         int base = input.nextInt();
         input.nextLine();
         
-        if (isDivisible(num) == true)
-            System.out.printf("%d %s 3\n", num, "is divisible by");
-        else 
-            System.out.printf("%d %s 3\n", num, "is not divisible by");
-         
-        if (isDivisible(num, base) == true)
-            System.out.printf("%d %s %d\n", num, "is divisible by", base);
-        else 
-            System.out.printf("%d %s %d\n", num, "is not divisible by", base);
+        printResult(num);
         
         System.out.printf("\nPlease enter an English letter: ");
         char letter = input.nextLine().charAt(0);
@@ -34,15 +26,10 @@ public class ModuloChecker {
         int base2 = input.nextInt();
         char letter2 = input.next().charAt(0);
         
-        if (isDivisible(letter, base2))
-            System.out.printf("\'%c\' %s %d\n", letter, "is divisible by", base2);
-        else 
-            System.out.printf("\'%c\' %s %d\n", letter, "is not divisible by", base2);
+        System.out.println("");
         
-        if (isDivisible(letter, letter2))
-            System.out.printf("'%c' %s '%c'\n", letter, "is divisible by", letter2);
-        else 
-            System.out.printf("'%c' %s '%c'\n", letter, "is not divisible by", letter2);
+        printResult(letter, base2);
+        printResult(letter, letter2);
     }
     
     /**
@@ -110,19 +97,55 @@ public class ModuloChecker {
         return letterToNum(letter) % letterToNum(base) == 0;
     }
     
+    /**
+     * Print the results of a number mod by 3.
+     * 
+     * @param num the user inputed number
+     */
     public static void printResult(int num){
-        
+        if (isDivisible(num) == true)
+            System.out.printf("%d is divisible by 3\n", num);
+        else 
+            System.out.printf("%d is not divisible by 3\n", num);
     }
     
+    /**
+     * Print the results of a number mod by the base.
+     * 
+     * @param num the user inputed number.
+     * @param base the user inputed base.
+     */
     public static void printResult(int num, int base){
-        
+        if (isDivisible(num, base) == true)
+            System.out.printf("%d is divisible by %d\n", num, base);
+        else 
+            System.out.printf("%d is not divisible by %d\n", num, base);
     }
     
+    /**
+     * Print the results of a letter mod by a base.
+     * 
+     * @param letter the user inputed letter converted to a number.
+     * @param base the user inputed base.
+     */
     public static void printResult(char letter, int base){
-        
+        if (isDivisible(letter, base) == true)
+            System.out.printf("'%c' is divisible by %d\n", letter, base);
+        else 
+            System.out.printf("'%c' is not divisible by %d\n", letter, base);
     }
     
+    /**
+     * Print the results of a letter mod by a base.
+     * 
+     * @param letter the user inputed letter converted to a number.
+     * @param base the user inputed base.
+     */
     public static void printResult(char letter, char base){
-        
+        if (isDivisible(letter, base) == true)
+            System.out.printf("'%c' is divisible by %c\n", letter, base);
+        else 
+            System.out.printf("'%c' is not divisible by %c\n", letter, base);
     }
+    
 }
