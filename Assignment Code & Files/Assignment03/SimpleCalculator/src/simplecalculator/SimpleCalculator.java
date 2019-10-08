@@ -19,15 +19,15 @@ public class SimpleCalculator {
         System.out.print("Please choose an operation: (+, -, *, /): ");
         char oper = input.next().charAt(0);
         input.nextLine();
-        
+
         System.out.print("Please enter a formula: e.g. \"3.14 * 2\": ");
         String formula = input.nextLine().trim();
-        
+
         System.out.printf("\n%-25s: %.2f + %.2f = %.2f\n", "Calling the first"
                 + " method", num1, num2, calcResult(num1, num2));
         System.out.printf("%-25s: %.2f %c %.2f = %.2f\n", "Calling the second "
                 + "method", num1, oper, num2, calcResult(num1, num2, oper));
-        System.out.printf("%-25s: %s = %.2f\n", "Calling the third method", 
+        System.out.printf("%-25s: %s = %.2f\n", "Calling the third method",
                 formula, calcResult(formula));
     }
 
@@ -51,40 +51,41 @@ public class SimpleCalculator {
      * @return the result based on the operator.
      */
     public static double calcResult(double num1, double num2, char oper) {
-        if (oper == '+') {
-            return num1 + num2;
-        } else if (oper == '-') {
-            return num1 - num2;
-        } else if (oper == '*') {
-            return num1 * num2;
-        } else {
-            return num1 / num2;
+        switch (oper) {
+            case '+':
+                return num1 + num2;
+            case '-':
+                return num1 - num2;
+            case '*':
+                return num1 * num2;
+            default:
+                return num1 / num2;
         }
     }
-    
-    
+
     /**
      * Calculate the value based on the numbers and the operators in the string.
-     * 
+     *
      * @param formula the string to be calculated.
      * @return the result based on the string.
      */
     public static double calcResult(String formula) {
         int idxSpace = formula.indexOf(' ');
         int lastIdxSpace = formula.lastIndexOf(' ');
-        
+
         double num1 = Double.parseDouble(formula.substring(0, idxSpace));
         double num2 = Double.parseDouble(formula.substring(lastIdxSpace + 1));
         char oper = formula.substring(idxSpace + 1, lastIdxSpace).charAt(0);
-        
-        if (oper == '+') {
-            return num1 + num2;
-        } else if (oper == '-') {
-            return num1 - num2;
-        } else if (oper == '*') {
-            return num1 * num2;
-        } else {
-            return num1 / num2;
+
+        switch (oper) {
+            case '+':
+                return num1 + num2;
+            case '-':
+                return num1 - num2;
+            case '*':
+                return num1 * num2;
+            default:
+                return num1 / num2;
         }
     }
 }

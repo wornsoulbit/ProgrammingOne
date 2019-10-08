@@ -14,13 +14,14 @@ public class CaseConvertor {
         Scanner input = new Scanner(System.in);
 
         System.out.print("Please enter a word: ");
-        String word = input.nextLine().trim();
+        String word = input.nextLine();
 
         System.out.printf("%s\n %s\n %s\n %s\n",
                 "Please choose a type of case: ",
                 "1. 'l' or 'L' for lowercase",
                 "2. 'u' or 'U' for uppercase",
                 "3. 't' or 'T' for titlecase");
+        System.out.print("Enter your choice: ");
         char caseType = input.nextLine().charAt(0);
         
         System.out.printf("\n%-37s: %s\n", "Original word", word);
@@ -52,20 +53,36 @@ public class CaseConvertor {
     }
 
     /**
-     * Converts the given string to Xxxxx.
+     * Converts the given string to a specified case type 
+     * e.g. XXXXX; Xxxxx; xxxxx.
      *
      * @param word the initial string.
      * @param caseType the type of casing the user wants.
      * @return the string as specified by the user e.g. XXXXX; Xxxxx; xxxxx.
      */
     public static String convertCase(String word, char caseType) {
-        if (caseType == 'l' || caseType == 'L') {
-            return word.toLowerCase();
-        } else if (caseType == 'u' || caseType == 'U') {
-            return word.toUpperCase();
-        } else {
-            return Character.toUpperCase(word.charAt(0))
-                    + word.substring(1).toLowerCase();
+        switch (caseType) {
+            case 'l':
+            case 'L':
+                return word.toLowerCase();
+            case 'u':
+            case 'U':
+                return word.toUpperCase();
+            default:
+                return Character.toUpperCase(word.charAt(0)) + word.substring(1);
+                    
         }
+
+//        switch (caseType) {
+//            case 'l':
+//            case 'L':
+//                return word.toLowerCase();
+//            case 'u':
+//            case 'U':
+//                return word.toUpperCase();
+//            default:
+//                return Character.toUpperCase(word.charAt(0))
+//                        + word.substring(1).toLowerCase();
+//        }
     }
 }
