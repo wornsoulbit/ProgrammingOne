@@ -39,7 +39,7 @@ public class ModuloChecker {
      * @return a number.
      */
     public static int letterToNum(char letter) {
-        return letter;
+        return Character.toLowerCase(letter) - 'a';
     } 
 
     /**
@@ -64,7 +64,7 @@ public class ModuloChecker {
     }
     
     /**
-     * Converts the letter into a number then see's if its divisible by 3.
+     * Converts the letter into a number then sees if its divisible by 3.
      * 
      * @param letter the inputed letter.
      * @return true or false based on if the letter is divisible by 3.
