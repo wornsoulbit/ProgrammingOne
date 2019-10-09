@@ -36,7 +36,7 @@ public class ModuloChecker {
      * Converts the letter to a number e.g. 'A' to 0.
      * 
      * @param letter the inputed letter.
-     * @return a number based off of ASCII table.
+     * @return a number.
      */
     public static int letterToNum(char letter) {
         return letter;
@@ -103,7 +103,7 @@ public class ModuloChecker {
      * @param num the user inputed number
      */
     public static void printResult(int num){
-        if (isDivisible(num) == true)
+        if (isDivisible(num))
             System.out.printf("%d is divisible by 3\n", num);
         else 
             System.out.printf("%d is not divisible by 3\n", num);
@@ -116,7 +116,7 @@ public class ModuloChecker {
      * @param base the user inputed base.
      */
     public static void printResult(int num, int base){
-        if (isDivisible(num, base) == true)
+        if (isDivisible(num, base))
             System.out.printf("%d is divisible by %d\n", num, base);
         else 
             System.out.printf("%d is not divisible by %d\n", num, base);
@@ -129,7 +129,7 @@ public class ModuloChecker {
      * @param base the user inputed base.
      */
     public static void printResult(char letter, int base){
-        if (isDivisible(letter, base) == true)
+        if (isDivisible(letter, base))
             System.out.printf("'%c' is divisible by %d\n", letter, base);
         else 
             System.out.printf("'%c' is not divisible by %d\n", letter, base);
@@ -142,7 +142,7 @@ public class ModuloChecker {
      * @param base the user inputed base.
      */
     public static void printResult(char letter, char base){
-        if (isDivisible(letter, base) == true)
+        if (isDivisible(letter, base))
             System.out.printf("'%c' is divisible by %c\n", letter, base);
         else 
             System.out.printf("'%c' is not divisible by %c\n", letter, base);
