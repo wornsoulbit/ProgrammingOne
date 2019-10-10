@@ -42,4 +42,12 @@ public class JavaApplication3 {
             return (age < 18) ? 'b' : 'm';
         }
     }
+    
+    public static double calcParentGift(double balance) {
+        double tinyGift = 10;
+        double hugeGift = 50;
+        double giftThreshold = 100;
+        
+        return (balance >= giftThreshold) ? balance + tinyGift : balance + hugeGift; 
+    }
 }
