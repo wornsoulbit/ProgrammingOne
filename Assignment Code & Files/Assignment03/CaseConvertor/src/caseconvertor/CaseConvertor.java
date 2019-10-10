@@ -61,13 +61,12 @@ public class CaseConvertor {
      * @return the string as specified by the user e.g. XXXXX; Xxxxx; xxxxx.
      */
     public static String convertCase(String word, char caseType) {
+        char lowerCase = Character.toLowerCase(caseType);
         String newWord = word.trim();
-        switch (caseType) {
+        switch (lowerCase) {
             case 'l':
-            case 'L':
                 return newWord.toLowerCase();
             case 'u':
-            case 'U':
                 return newWord.toUpperCase();
             default:
                 return toTitleCase(word);
