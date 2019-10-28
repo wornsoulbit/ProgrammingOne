@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * Calculate the amount of days there are in a month.
- * 
+ *
  * @author Alex Vasil
  */
 public class Task1 {
@@ -12,15 +12,15 @@ public class Task1 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Please enter a number month and year seperated by a space: ");
-        
+
         int month = input.nextInt();
         int year = input.nextInt();
         System.out.println(calcDays(month, year));
     }
-    
+
     /**
      * Calculates how many days there are in a month.
-     * 
+     *
      * @param month the chosen month in a number. e.g. 1 = January.
      * @param year the chosen year.
      * @return the number of days in a month.
@@ -47,7 +47,7 @@ public class Task1 {
                     return 28;
                 }
         }
-        
+
 //        if (month == 1 || month == 3 || month == 5 || month == 7 || 
 //                month == 8 || month == 10 || month == 12) {
 //            return 31;
@@ -61,10 +61,10 @@ public class Task1 {
 //            }
 //        }
     }
-    
+
     /**
      * Checks to see if it's a leap year.
-     * 
+     *
      * @param year the year.
      * @return true if its a leap year, false if its not.
      */
@@ -73,6 +73,8 @@ public class Task1 {
             return false;
         } else if (year % 100 != 0) {
             return true;
-        } else return year % 400 == 0;
+        } else {
+            return year % 400 == 0;
+        }
     }
 }
