@@ -31,7 +31,7 @@ public class RandomExample {
         Random rand = new Random();
         
         int dice = rand.nextInt(6) + 1;
-        int listLength = 5; // The number of numbers in a list of numbers.
+        int listLength = 10; // The number of numbers in a list of numbers.
         int stepLength = 2; // The length of a list of numbers e.g. {5, 7, 9, 11, 13}
         int min = 5; // The minimum number in a list of numbers e.g. {5, 7, 9, 11, 13}
         int num1 = rand.nextInt(listLength) * stepLength + min;
