@@ -7,7 +7,7 @@ package task4;
 public class Task4 {
 
     public static void main(String[] args) {
-
+        
     }
 
     /**
@@ -27,8 +27,10 @@ public class Task4 {
             return 'c';
         } else if (digitScore < 70 && digitScore >= 60) {
             return 'd';
-        } else {
+        } else if (digitScore < 60) {
             return 'f';
+        } else {
+            return ' ';
         }
     }
 
@@ -41,7 +43,7 @@ public class Task4 {
      */
     public static void printMessage(char letterScore) {
 
-        switch (toLetterScore(letterScore)) {
+        switch (letterScore) {
             case 'a':
                 System.out.println("Excellent!");
                 break;
@@ -58,13 +60,11 @@ public class Task4 {
                 break;
         }
 
-//        if (toLetterScore(letterScore) == 'a') {
+//        if (letterScore == 'a') {
 //            System.out.println("Excellent!");
-//        } else if (toLetterScore(letterScore) == 'b' 
-//                || toLetterScore(letterScore) == 'c') {
+//        } else if (letterScore == 'b' || letterScore == 'c') {
 //            System.out.println("Well done.");
-//        } else if (toLetterScore(letterScore) == 'd' 
-//                || toLetterScore(letterScore) == 'f'){
+//        } else if (letterScore == 'd' || letterScore == 'f'){
 //            System.out.println("Better luck next time.");
 //        } else {
 //            System.out.println("Invaild Grade.");
