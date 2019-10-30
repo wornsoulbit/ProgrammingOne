@@ -23,7 +23,7 @@ public class Task2 {
      * @return a hidden string e.g. "Hello" idx 2 -> "--l--".
      */
     public static String hideChar(String str, int idx) {
-        String temp = "";
+        String strOut = "";
         
         if (idx < 0 || idx > str.length()) {
             return str;
@@ -31,12 +31,12 @@ public class Task2 {
         
         for (int i = 0; i < str.length(); i++) {
             if (idx == i) {
-                temp += str.charAt(i);
+                strOut += str.charAt(i);
             } else {
-                temp += "-";
+                strOut += "-";
             }
         }
-        return temp;
+        return strOut;
     }
 
 }

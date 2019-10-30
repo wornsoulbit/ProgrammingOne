@@ -25,7 +25,7 @@ public class Task2 {
         Random rand = new Random();
 
         int temp;
-        double average = 0;
+        double avg = 0;
         int counter = 0;
 
         for (int i = 0; i <= num; i++) {
@@ -34,9 +34,9 @@ public class Task2 {
                 continue;
             }
             counter++;
-            average += temp;
+            avg += temp;
         }
 
-        return average / counter;
+        return avg / counter;
     }
 }

@@ -24,19 +24,19 @@ public class Task1 {
      * @return an alphabetical string that starts at ‘a’.
      */
     public static String generateAlphabetString(int num, char caseType) {
-        String tempStr = "";
+        String strOut = "";
         for (int i = 0; i < num; i++) {
             if (num < 0) {
-                tempStr = " ";
+                strOut = " ";
                 break;
             }
-            tempStr += (char) ('a' + i);
+            strOut += (char) ('a' + i);
         }
         
         if (caseType == 'u' || caseType == 'U') {
-            return tempStr.toUpperCase();
+            return strOut.toUpperCase();
         } else {
-            return tempStr.toLowerCase();
+            return strOut.toLowerCase();
         }
 
     }
