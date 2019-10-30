@@ -10,7 +10,7 @@ package task3;
 public class Task3 {
 
     public static void main(String[] args) {
-        System.out.println(containsIgnoreCase("bcdefgh", 'a'));
+        System.out.println(containsIgnoreCase("hello", 'a'));
     }
 
     /**
@@ -27,7 +27,7 @@ public class Task3 {
         char temp;
         for (int i = 0; i < str.length(); i++) {
             temp = str.toLowerCase().charAt(i);
-            if (temp == c && i < str.length()) {
+            if (temp == c) {
                 return true;
             }
         }
