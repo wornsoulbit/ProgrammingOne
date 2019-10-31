@@ -1,4 +1,4 @@
-package task1;
+package generatealphabetstring;
 
 /**
  * receive a number that indicates how many alphabet letters to generate, the
@@ -8,7 +8,7 @@ package task1;
  *
  * @author Alex Vasil
  */
-public class Task1 {
+public class GenerateAlphabetString {
 
     public static void main(String[] args) {
         System.out.println(generateAlphabetString(12, 'U'));

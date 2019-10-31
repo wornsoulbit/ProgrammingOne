@@ -1,4 +1,4 @@
-package task2;
+package hidecharacter;
 
 /**
  * takes a string, and an index, then create a string, in which all characters
@@ -8,7 +8,7 @@ package task2;
  *
  * @author Alex Vasil
  */
-public class Task2 {
+public class HideCharacter {
 
     public static void main(String[] args) {
         System.out.println(hideChar("hello", -3));
