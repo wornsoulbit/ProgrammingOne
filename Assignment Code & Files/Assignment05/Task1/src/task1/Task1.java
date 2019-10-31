@@ -36,7 +36,7 @@ public class Task1 {
         if (caseType == 'u' || caseType == 'U') {
             return strOut.toUpperCase();
         } else {
-            return strOut.toLowerCase();
+            return strOut;
         }
 
     }
