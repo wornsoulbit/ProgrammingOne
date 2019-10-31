@@ -9,12 +9,12 @@ package task4;
 public class Task4 {
 
     public static void main(String[] args) {
-        System.out.println(encode("Hello hell spawns of the world!", 3));
+        System.out.println(decode("Eua cuxq euaxykrl zuu jgtm ngxj, mktoay inorj!", 6));
     }
 
     /**
-     * Takes a string, and then shift every character inside by delta, then
-     * return the new string.
+     * Takes a string, encodes it and then shift every character inside by
+     * delta, then return the new string.
      *
      * @param strIn the initial String.
      * @param delta how to shift the letters.
@@ -30,9 +30,37 @@ public class Task4 {
             }
 
             if (checkCase(strIn.charAt(i))) {
-                strOut += shiftLowerCaseAlpha(strIn.charAt(i), convertRange(delta));
+                strOut += shiftCaseAlpha(strIn.charAt(i), convertRange(delta));
             } else {
-                strOut += shiftUpperCaseAlpha(strIn.charAt(i), convertRange(delta));
+                strOut += shiftCaseAlpha(strIn.charAt(i), convertRange(delta));
+            }
+
+        }
+        return strOut;
+    }
+
+    /**
+     * Takes a string, decodes it by shifting it by delta the opposite way it
+     * was encoded by.
+     *
+     * @param strIn the initial String.
+     * @param delta how to shift the letters.
+     * @return the decoded string.
+     */
+    public static String decode(String strIn, int delta) {
+        delta = delta * (-1);
+        String strOut = "";
+        for (int i = 0; i < strIn.length(); i++) {
+
+            if (isNotAlphabet(strIn.charAt(i))) {
+                strOut += strIn.charAt(i);
+                continue;
+            }
+
+            if (checkCase(strIn.charAt(i))) {
+                strOut += shiftCaseAlpha(strIn.charAt(i), convertRange(delta));
+            } else {
+                strOut += shiftCaseAlpha(strIn.charAt(i), convertRange(delta));
             }
 
         }
@@ -50,7 +78,7 @@ public class Task4 {
     }
 
     /**
-     * Checks to see if a letter is lowercase or uppercase and returns true for 
+     * Checks to see if a letter is lowercase or uppercase and returns true for
      * lowercase, false for uppercase.
      *
      * @param letter the inputed letter.
@@ -74,38 +102,33 @@ public class Task4 {
      * Shifts a letter to a new letter. (caesar cipher)
      *
      * @param letter the inputed letter.
-     * @param delta how far the letter will be shifted. e.g. 'z', 2 -> 'b'
-     * @return the lowercase shifted letter.
-     */
-    public static char shiftLowerCaseAlpha(char letter, int delta) {
-        
-        if (letter + delta < 97) {
-            return (char) (letter + 26 + delta); 
-        }
-        
-        if (letter + delta > 122) {
-            return (char) (letter - 26 + convertRange(delta));
-        } else {
-            return (char) (letter + convertRange(delta));
-        }
-    }
-    
-    /**
-     * Shifts a letter to a new letter. (caesar cipher)
-     *
-     * @param letter the inputed letter.
      * @param delta how far the letter will be shifted. e.g. 'Z', 2 -> 'B'
-     * @return the uppercase shifted letter.
+     * @return the shifted letter with the proper casing.
      */
-    public static char shiftUpperCaseAlpha(char letter, int delta) {
-        if (letter + delta < 65) {
-            return (char) (letter + 26 + delta); 
-        }
-        
-        if (letter + delta > 90) {
-            return (char) (letter - 26 + convertRange(delta));
+    public static char shiftCaseAlpha(char letter, int delta) {
+        if (checkCase(letter)) {
+
+            if (letter + delta < 97) {
+                return (char) (letter + 26 + delta);
+            }
+
+            if (letter + delta > 122) {
+                return (char) (letter - 26 + convertRange(delta));
+            } else {
+                return (char) (letter + convertRange(delta));
+            }
+
         } else {
-            return (char) (letter + convertRange(delta));
+
+            if (letter + delta < 65) {
+                return (char) (letter + 26 + delta);
+            }
+
+            if (letter + delta > 90) {
+                return (char) (letter - 26 + convertRange(delta));
+            } else {
+                return (char) (letter + convertRange(delta));
+            }
         }
     }
 }
