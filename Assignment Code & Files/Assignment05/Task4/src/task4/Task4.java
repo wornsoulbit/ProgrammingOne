@@ -9,7 +9,7 @@ package task4;
 public class Task4 {
 
     public static void main(String[] args) {
-        System.out.println(decode("Eua cuxq euaxykrl zuu jgtm ngxj, mktoay inorj!", 6));
+        System.out.println(encode("Java", -1));
     }
 
     /**
@@ -24,15 +24,10 @@ public class Task4 {
         String strOut = "";
         for (int i = 0; i < strIn.length(); i++) {
 
-            if (isNotAlphabet(strIn.charAt(i))) {
-                strOut += strIn.charAt(i);
-                continue;
-            }
-
-            if (checkCase(strIn.charAt(i))) {
-                strOut += shiftCaseAlpha(strIn.charAt(i), convertRange(delta));
+            if (Character.isAlphabetic(strIn.charAt(i))) {
+                strOut += shiftCaseAlpha(strIn.charAt(i), delta);
             } else {
-                strOut += shiftCaseAlpha(strIn.charAt(i), convertRange(delta));
+                strOut += strIn.charAt(i);
             }
 
         }
@@ -48,54 +43,17 @@ public class Task4 {
      * @return the decoded string.
      */
     public static String decode(String strIn, int delta) {
-        delta = delta * (-1);
         String strOut = "";
         for (int i = 0; i < strIn.length(); i++) {
 
-            if (isNotAlphabet(strIn.charAt(i))) {
-                strOut += strIn.charAt(i);
-                continue;
-            }
-
-            if (checkCase(strIn.charAt(i))) {
-                strOut += shiftCaseAlpha(strIn.charAt(i), convertRange(delta));
+            if (Character.isAlphabetic(strIn.charAt(i))) {
+                strOut += shiftCaseAlpha(strIn.charAt(i), -delta % 26);
             } else {
-                strOut += shiftCaseAlpha(strIn.charAt(i), convertRange(delta));
+                strOut += strIn.charAt(i);
             }
 
         }
         return strOut;
-    }
-
-    /**
-     * Converts a number into a range of 1 to 26. e.g. num == 30 > 4
-     *
-     * @param delta the inputed number.
-     * @return a number in the range of 1 to 26.
-     */
-    public static int convertRange(int delta) {
-        return delta % 26;
-    }
-
-    /**
-     * Checks to see if a letter is lowercase or uppercase and returns true for
-     * lowercase, false for uppercase.
-     *
-     * @param letter the inputed letter.
-     * @return true if the letter is lowercase, otherwise false.
-     */
-    public static boolean checkCase(char letter) {
-        return Character.isLowerCase(letter);
-    }
-
-    /**
-     * Checks to see if a character is in the English alphabet.
-     *
-     * @param character to see if its an English letter.
-     * @return true if its in the English alphabet, otherwise false.
-     */
-    public static boolean isNotAlphabet(char character) {
-        return !Character.isAlphabetic(character);
     }
 
     /**
@@ -106,29 +64,39 @@ public class Task4 {
      * @return the shifted letter with the proper casing.
      */
     public static char shiftCaseAlpha(char letter, int delta) {
-        if (checkCase(letter)) {
-
-            if (letter + delta < 97) {
-                return (char) (letter + 26 + delta);
-            }
-
-            if (letter + delta > 122) {
-                return (char) (letter - 26 + convertRange(delta));
-            } else {
-                return (char) (letter + convertRange(delta));
-            }
-
-        } else {
-
-            if (letter + delta < 65) {
-                return (char) (letter + 26 + delta);
-            }
-
-            if (letter + delta > 90) {
-                return (char) (letter - 26 + convertRange(delta));
-            } else {
-                return (char) (letter + convertRange(delta));
-            }
+//        if (checkCase(letter)) {
+//
+//            if (letter + delta < 97) {
+//                return (char) (letter + 26 + delta);
+//            }
+//
+//            if (letter + delta > 122) {
+//                return (char) (letter - 26 + delta);
+//            } else {
+//                return (char) (letter + delta);
+//            }
+//
+//        } else {
+//
+//            if (letter + delta < 65) {
+//                return (char) (letter + 26 + delta);
+//            }
+//
+//            if (letter + delta > 90) {
+//                return (char) (letter - 26 + delta);
+//            } else {
+//                return (char) (letter + delta);
+//            }
+//        }
+        
+        // if delta < 0 
+        // do something to bring it to positive
+        if (delta < 0) {
+            //-1 a > z >> 25 
+            
         }
+        char startLetter = Character.isUpperCase(letter) ? 'A' : 'a';
+        return (char) ((letter - startLetter + delta % 26) + startLetter);
     }
+    
 }
