@@ -9,7 +9,7 @@ package caesarcipher;
 public class CaesarCipher {
 
     public static void main(String[] args) {
-        System.out.println(encode("z", 1));
+        System.out.println(encode("Java", -1));
     }
 
     /**
@@ -63,39 +63,12 @@ public class CaesarCipher {
      * @param delta how far the letter will be shifted. e.g. 'Z', 2 -> 'B'
      * @return the shifted letter with the proper casing.
      */
-    public static char shiftCaseAlpha(char letter, int delta) {
-        if (Character.isLowerCase(letter)) {
-
-            if (letter + delta < 'a') {
-                return (char) (letter + 26 + delta);
-            }
-
-            if (letter + delta > 'z') {
-                return (char) (letter - 26 + delta);
-            } else {
-                return (char) (letter + delta);
-            }
-
-        } else {
-
-            if (letter + delta < 'A') {
-                return (char) (letter + 26 + delta);
-            }
-
-            if (letter + delta > 'Z') {
-                return (char) (letter - 26 + delta);
-            } else {
-                return (char) (letter + delta);
-            }
+    public static char shiftCaseAlpha(char letter, int delta) {        
+        if (delta < 0) {
+            delta = (delta % 26) + 26;
         }
-        
-        // if delta < 0 
-        // do something to bring it to positive
-//        if (delta < 0) {
-//            delta = (delta % 26) + 26;
-//        }
-//        char startLetter = Character.isUpperCase(letter) ? 'A' : 'a';
-//        return (char) ((letter - startLetter + delta % 26) + startLetter);
+        char startLetter = Character.isUpperCase(letter) ? 'A' : 'a';
+        return (char) (((letter - startLetter + delta) % 26) + startLetter);
     }
     
 }
