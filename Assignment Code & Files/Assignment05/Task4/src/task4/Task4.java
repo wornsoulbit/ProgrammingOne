@@ -92,8 +92,7 @@ public class Task4 {
         // if delta < 0 
         // do something to bring it to positive
         if (delta < 0) {
-            //-1 a > z >> 25 
-            
+            delta = (delta % 26) + 26;
         }
         char startLetter = Character.isUpperCase(letter) ? 'A' : 'a';
         return (char) ((letter - startLetter + delta % 26) + startLetter);
