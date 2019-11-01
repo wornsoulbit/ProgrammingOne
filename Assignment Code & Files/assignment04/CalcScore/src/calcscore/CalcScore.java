@@ -23,20 +23,21 @@ public class CalcScore {
     public static double calcAverageScore(int num) {
 
         Random rand = new Random();
-
-        int temp;
-        double avg = 0;
+        int numGenerate = 100; //Amount of numbers that will be generated.
+        int numDiscard = 40; //Numbers below the value will be discarded.
+        int randomNum;
+        double sum = 0;
         int counter = 0;
 
-        for (int i = 0; i <= num; i++) {
-            temp = rand.nextInt(100);
-            if (temp < 40) {
+        for (int i = 0; i < num; i++) {
+            randomNum = rand.nextInt(numGenerate + 1);
+            if (randomNum < numDiscard) {
                 continue;
             }
             counter++;
-            avg += temp;
+            sum += randomNum;
         }
 
-        return avg / counter;
+        return sum / counter;
     }
 }
