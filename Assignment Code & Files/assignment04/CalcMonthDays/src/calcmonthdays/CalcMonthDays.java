@@ -41,11 +41,7 @@ public class CalcMonthDays {
             case 11:
                 return 30;
             default:
-                if (isLeapYear(year)) {
-                    return 29;
-                } else {
-                    return 28;
-                }
+                return isLeapYear(year) ? 29 : 28;
         }
 
 //        if (month == 1 || month == 3 || month == 5 || month == 7 || 
