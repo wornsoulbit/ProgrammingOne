@@ -7,18 +7,18 @@ package animal;
  */
 public class Dog {
 
-    String name;
-    String breed;
-    String colour;
-    char gender;
-    int age;
+    private String name;
+    private String breed;
+    private String colour;
+    private char gender;
+    private int age;
 
     public Dog() {
-        name = null;
-        age = 0;
-        gender = 0;
-        breed = null;
-        colour = null;
+        this.name = "";
+        this.age = -1;
+        this.gender = 0;
+        this.breed = "";
+        this.colour = "";
     }
 
     public Dog(String name, int age, char gender, String breed) {
@@ -36,5 +36,45 @@ public class Dog {
         this.breed = breed;
         this.colour = colour;
     }
+    
+    public Dog (String name) {
+        this.name = name;
+        this.age = -1;
+        this.gender = 0;
+        this.breed = "";
+        this.colour = "";
+    }
 
+    public String getName() {
+        return name.substring(0, 1);
+    }
+    
+    public String getBreed() {
+        return breed;
+    }
+    
+    public char getGender() {
+        return gender;
+    }
+    
+    public int getAge() {
+        return age;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public void setAge(int age) {
+        this.age = age;
+    }
+    
+    public void setGender(char gender) {
+        this.gender = gender;
+    }
+    
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
+    
 }
