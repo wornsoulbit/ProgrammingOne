@@ -54,6 +54,8 @@ public class NumToLetterScore {
                 System.out.println("Well done.");
                 break;
             case 'd':
+                System.out.println("Passed.");
+                break;
             case 'f':
                 System.out.println("Better luck next time.");
                 break;
@@ -66,7 +68,9 @@ public class NumToLetterScore {
 //            System.out.println("Excellent!");
 //        } else if (letterScore == 'b' || letterScore == 'c') {
 //            System.out.println("Well done.");
-//        } else if (letterScore == 'd' || letterScore == 'f'){
+//        } else if (letterScore == 'd') {
+//            System.out.println("Passed.");
+//        } else if (letterScore == 'f') {
 //            System.out.println("Better luck next time.");
 //        } else {
 //            System.out.println("Invaild Grade.");
