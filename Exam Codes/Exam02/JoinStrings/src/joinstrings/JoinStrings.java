@@ -1,19 +1,18 @@
 package joinstrings;
 
 /**
- * Write a method joinStrings () , the method takes two string s, and a. if the
- * first String is empty and the second string is not, then the output string is
- * the second string joined with itself. b. if the first String is not empty and
- * the second string is, then the output string is the first string joined with
- * itself. c. if both the two strings are not empty, then the output string is
- * the first string joined with the second string.
+ * Joins two strings together to form one single string, if the first string is
+ * empty then output the second string added to it self e.g.: "" and "Hi" to
+ * "HiHi", if the second string is empty then same as previous but with the
+ * first string, otherwise if both of the strings are not empty output both
+ * strings together, e.g. "Hello" and "Java" to "HelloJava".
  *
  * @author Alex Vasil
  */
 public class JoinStrings {
 
     public static void main(String[] args) {
-        System.out.println(joinStrings("Java", ""));
+        System.out.println(joinStrings("", ""));
     }
 
     /**
