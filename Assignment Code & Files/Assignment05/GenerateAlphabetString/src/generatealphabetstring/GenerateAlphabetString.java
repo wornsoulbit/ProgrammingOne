@@ -11,7 +11,7 @@ package generatealphabetstring;
 public class GenerateAlphabetString {
 
     public static void main(String[] args) {
-        System.out.println(generateAlphabetString(12, 'U'));
+        System.out.println(generateAlphabetString(12, 'l'));
     }
 
     /**

@@ -11,30 +11,26 @@ package hidecharacter;
 public class HideCharacter {
 
     public static void main(String[] args) {
-        System.out.println(hideChar("hello", -3));
+        System.out.println(hideChar("hello", 5));
     }
 
     /**
      * create a string, in which all characters in the string are hidden
      * (display as dash “-”) and only the one at that idx is displayed.
      *
-     * @param str the initial string.
+     * @param strIn the initial string.
      * @param idx the character that is not hidden.
      * @return a hidden string e.g. "Hello" idx 2 -> "--l--".
      */
-    public static String hideChar(String str, int idx) {
+    public static String hideChar(String strIn, int idx) {
         String strOut = "";
         
-        if (idx < 0 || idx > str.length()) {
-            return str;
+        if (idx < 0 || idx > strIn.length()) {
+            return strIn;
         }
         
-        for (int i = 0; i < str.length(); i++) {
-            if (idx == i) {
-                strOut += str.charAt(i);
-            } else {
-                strOut += "-";
-            }
+        for (int i = 0; i < strIn.length(); i++) {
+            strOut += idx == i ? strIn.charAt(i) : "-";
         }
         return strOut;
     }

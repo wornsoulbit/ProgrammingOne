@@ -3,6 +3,7 @@ package copystring;
 /**
  * Take an input string e.g. "Hello" and repeat each letter in that string an
  * additional time to get the output string e.g. "HHeelllloo".
+ * 
  * @author Alex Vasil
  */
 public class CopyString {
