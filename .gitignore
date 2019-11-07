@@ -104,5 +104,14 @@ Thumbs.db
 /Assignment Code & Files/Assignment05/CaesarCipher/nbproject/private/
 /Assignment Code & Files/Assignment05/GenerateAlphabetString/nbproject/private/
 /Assignment Code & Files/Assignment05/HideCharacter/nbproject/private/
+<<<<<<< HEAD
 /Assignment Code & Files/Assignment05/CaesarCipher/build/
 /Test Codes/JavaApplication10/nbproject/private/
+=======
+/Assignment Code & Files/Assignment05/GenerateAlphabetString/build/
+/Exam Codes/Exam02/CopyString/nbproject/private/
+/Exam Codes/Exam02/JoinStrings/nbproject/private/
+/Assignment Code & Files/Assignment05/HideCharacter/build/
+/Exam Codes/Exam02/CopyString/build/
+/Assignment Code & Files/Assignment05/ContainsCharacter/build/
+>>>>>>> 451fc8699b9162aa0b4e61af2de4faf900d71a2e

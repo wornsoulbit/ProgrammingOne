@@ -25,7 +25,7 @@ public class CaesarCipher {
         for (int i = 0; i < strIn.length(); i++) {
 
             if (Character.isAlphabetic(strIn.charAt(i))) {
-                strOut += encryptingCharacter(strIn.charAt(i), delta);
+                strOut += shuffleCharacter(strIn.charAt(i), delta);
             } else {
                 strOut += strIn.charAt(i);
             }
@@ -47,7 +47,7 @@ public class CaesarCipher {
         for (int i = 0; i < strIn.length(); i++) {
 
             if (Character.isAlphabetic(strIn.charAt(i))) {
-                strOut += encryptingCharacter(strIn.charAt(i), -delta % 26);
+                strOut += shuffleCharacter(strIn.charAt(i), -delta);
             } else {
                 strOut += strIn.charAt(i);
             }
@@ -63,12 +63,12 @@ public class CaesarCipher {
      * @param delta how far the letter will be shifted. e.g. 'Z', 2 -> 'B'
      * @return the shifted letter with the proper casing.
      */
-    public static char encryptingCharacter(char letter, int delta) {        
+    public static char shuffleCharacter(char letter, int delta) {        
         if (delta < 0) {
             delta = (delta % 26) + 26;
         }
         char startLetter = Character.isUpperCase(letter) ? 'A' : 'a';
-        return (char) (((letter - startLetter + delta) % 26) + startLetter);
+        return (char) ((letter - startLetter + delta) % 26 + startLetter);
     }
     
 }
