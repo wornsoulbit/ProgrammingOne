@@ -9,7 +9,7 @@ package caesarcipher;
 public class CaesarCipher {
 
     public static void main(String[] args) {
-        System.out.println(encode("Java", -1));
+        System.out.println(decode("Izuz", -1));
     }
 
     /**
@@ -43,17 +43,7 @@ public class CaesarCipher {
      * @return the decoded string.
      */
     public static String decode(String strIn, int delta) {
-        String strOut = "";
-        for (int i = 0; i < strIn.length(); i++) {
-
-            if (Character.isAlphabetic(strIn.charAt(i))) {
-                strOut += shuffleCharacter(strIn.charAt(i), -delta);
-            } else {
-                strOut += strIn.charAt(i);
-            }
-
-        }
-        return strOut;
+        return encode(strIn, -delta);
     }
 
     /**
