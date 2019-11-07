@@ -33,7 +33,7 @@ public class CaesarCipher {
         }
         return strOut;
     }
-
+    
     /**
      * Takes a string, decodes it by shifting it by delta the opposite way it
      * was encoded by.
