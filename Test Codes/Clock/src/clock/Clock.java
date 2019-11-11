@@ -2,11 +2,11 @@ package clock;
 
 /**
  * A class of a clock.
- * 
+ *
  * @author Alex Vasil
  */
 public class Clock {
-    
+
     private int hr;
     private int min;
     private int sec;
@@ -16,25 +16,41 @@ public class Clock {
         this.min = 0;
         this.sec = 0;
     }
-    
-    public Clock(int hr, int mi) {
+
+    public Clock(int hr, int min) {
         this.hr = hr;
-        this.min = mi;
+        this.min = min;
         this.sec = 0;
     }
-    
-    public Clock(int hr, int mi, int se) {
+
+    public Clock(int hr, int min, int sec) {
         this.hr = hr;
-        this.min = mi;
-        this.sec = se;
+        this.min = min;
+        this.sec = sec;
     }
     
+    public Clock(Clock otherClock) {
+        this.hr = otherClock.hr;
+        this.min = otherClock.min;
+        this.min = otherClock.sec;
+    }
+    
+    public Clock clone() {
+        return new Clock(this);
+    }
+    
+    public boolean equals(Clock anotherClock) {
+        return this.hr == anotherClock.hr && 
+                this.min == anotherClock.min && 
+                this.sec == anotherClock.sec;
+    }
+
     @Override
     public String toString() {
         //12:00:00
         return String.format("%02d:%02d:%02d", hr, min, sec);
     }
-    
+
     public int getHr() {
         return hr;
     }
@@ -58,6 +74,5 @@ public class Clock {
     public void setSe(int se) {
         this.sec = se;
     }
-    
-    
+
 }
