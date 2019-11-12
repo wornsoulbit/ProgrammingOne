@@ -25,8 +25,8 @@ public class Rectangle {
         this.length = rand.nextInt(generatedNums) + minNum;
         this.width = rand.nextInt(generatedNums) + minNum;
 
-        while (this.width > this.length) {
-            this.width = rand.nextInt(generatedNums) + minNum;
+        if (this.length > this.width) {
+            this.width = this.length;
         }
     }
 
