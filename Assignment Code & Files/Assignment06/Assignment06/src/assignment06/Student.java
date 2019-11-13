@@ -79,14 +79,22 @@ public class Student {
         return new Student(this);
     }
     
+    public boolean equals(Student otherStudent) {
+        return this.name == otherStudent.name 
+                && this.gender == otherStudent.gender 
+                && this.email == otherStudent.email
+                && this.course1 == otherStudent.course1
+                && this.course2 == otherStudent.course2
+                && this.course3 == otherStudent.course3;
+    }
+    
     public String toString() {
-        String message = String.format("%-10s: %s\n", "Course Name", course1.getCourseName());
-//        message += String.format("%-10s: %.2f\n", "Credit", credit);
-//        message += String.format("%-10s: %.2f\n", "Exam Score", examScore);
-//        message += String.format("%-10s: %.2f\n", "Assignment Score",
-//                assignmentScore);
-//        message += String.format("%-10s: %.2f\n", "Final Score",
-//                calcFinalScore(examScore, assignmentScore));
+        String message = String.format("%-10s: %s\n", "Name", name);
+        message += String.format("%-10s: %s\n", "Gender", gender);
+        message += String.format("%-10s: %s\n", "Email", email);
+//        message += String.format("%-10s: %.2f\n");
+//        message += String.format("%-10s: %.2f\n", "Passed Courses");
+//        message += String.format("%-10s: %.2f\n", "Total Credits");
 
         return message;
     }
