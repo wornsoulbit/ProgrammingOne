@@ -165,7 +165,7 @@ public class Course {
     public double getAssignmentScore() {
         return assignmentScore;
     }
-
+    
     /**
      * Sets the value of courseName.
      * 

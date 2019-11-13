@@ -7,8 +7,8 @@ package assignment06;
 public class test {
     
     public static void main(String[] args) {
-        Rectangle r1 = new Rectangle();
-        System.out.println(r1.toString());
+        Student s1 = new Student("Alex", "male", "alexandervasil840@gmail.");
+        System.out.println(s1);
     }
     
 }
