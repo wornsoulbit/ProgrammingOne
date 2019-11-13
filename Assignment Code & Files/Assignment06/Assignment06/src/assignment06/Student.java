@@ -10,26 +10,26 @@ public class Student {
     private String name;
     private String gender;
     private String email;
-    private Course course1 = new Course();
-    private Course course2 = new Course();
-    private Course course3 = new Course();
+    private Course course1;
+    private Course course2;
+    private Course course3;
 
     public Student() {
         this.name = "";
         this.gender = "";
         this.email = "";
-        this.course1 = null;
-        this.course2 = null;
-        this.course3 = null;
+        this.course1 = new Course("", 0, 0, 0);
+        this.course2 = new Course("", 0, 0, 0);
+        this.course3 = new Course("", 0, 0, 0);
     }
 
     public Student(String name, String gender, String email) {
         this.name = name;
         this.gender = gender;
         this.email = email;
-        this.course1 = null;
-        this.course2 = null;
-        this.course3 = null;
+        this.course1 = new Course("", 0, 0, 0);
+        this.course2 = new Course("", 0, 0, 0);
+        this.course3 = new Course("", 0, 0, 0);
     }
 
     public Student(String name, String gender, String email, Course course1,
@@ -47,16 +47,18 @@ public class Student {
         return passedCoursesNum;
     }
     
-//    public double calcTotalCredit(Course course) {
-//        
-//    }
+    public double calcTotalCredit(Course course) {
+        double totalCredit = 0;
+        return totalCredit;
+    }
     
     public boolean isValidEmail(String email) {
         
         int atSignIdx = this.email.indexOf("@");
         String atSignEmail = this.email.substring(atSignIdx);
         if (atSignEmail.contains("@") && atSignEmail.contains(".")) {
-            if (atSignEmail.substring(atSignEmail.indexOf("."), atSignEmail.length()).equals(".")) {
+            if (atSignEmail.substring(atSignEmail.indexOf("."), 
+                    atSignEmail.length()).equals(".")) {
                 return false;
             }
             return true;
@@ -88,14 +90,34 @@ public class Student {
                 && this.course3 == otherStudent.course3;
     }
     
+    @Override
     public String toString() {
-        String message = String.format("%-10s: %s\n", "Name", name);
-        message += String.format("%-10s: %s\n", "Gender", gender);
-        message += String.format("%-10s: %s\n", "Email", email);
-//        message += String.format("%-10s: %.2f\n");
-//        message += String.format("%-10s: %.2f\n", "Passed Courses");
-//        message += String.format("%-10s: %.2f\n", "Total Credits");
-
+        String message = String.format("%-15s: %s\n", "Name", name);
+        message += String.format("%-15s: %s\n", "Gender", gender);
+        message += String.format("%-15s: %s\n", "Email", email);
+        message += String.format("%-16s", "Course");
+        message += String.format("%-25s", "Name");
+        message += String.format("%-10s", "Credit");
+        message += String.format("%-5s", "Score");
+        message += String.format("\n-----------------------------------------"
+                + "---------------");
+        message += String.format("\n");
+        message += String.format("\n%-15s: %-23s %-9.1f %.2f", "Course 1", 
+                course1.getCourseName(), course1.getCredit(), 
+                course1.calcFinalScore
+        (course1.getExamScore(), course1.getAssignmentScore()));
+        message += String.format("\n%-15s: %-23s %-9.1f %.2f", "Course 2", 
+                course2.getCourseName(), course2.getCredit(), 
+                course2.calcFinalScore
+        (course2.getExamScore(), course2.getAssignmentScore()));
+        message += String.format("\n%-15s: %-23s %-9.1f %.2f", "Course 3", 
+                course3.getCourseName(), course3.getCredit(), 
+                course3.calcFinalScore
+        (course3.getExamScore(), course3.getAssignmentScore()));
+        message += String.format("\n");
+        message += String.format("\n%-15s:", "Passed Course");
+        message += String.format("\n%-15s:", "Total Credit");
+        
         return message;
     }
     

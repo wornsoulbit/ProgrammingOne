@@ -7,7 +7,7 @@ package assignment06;
 public class test {
     
     public static void main(String[] args) {
-        Student s1 = new Student("Alex", "male", "alexandervasil840@gmail.");
+        Student s1 = new Student();
         System.out.println(s1);
     }
     
