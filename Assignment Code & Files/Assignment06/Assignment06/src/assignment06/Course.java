@@ -55,11 +55,9 @@ public class Course {
     /**
      * Calculates the final score based on the examScore and assignmentScore.
      *
-     * @param examScore the mark that is obtained on a exam.
-     * @param assignmentScore the mark that is obtained for an assignment.
      * @return the mark that is obtained.
      */
-    public double calcFinalScore(double examScore, double assignmentScore) {
+    public double calcFinalScore() {
         double examPercentage = 0.6; // 60%
         double assignmentPercentage = 0.4; // 40%
         return (this.examScore * examPercentage)
@@ -69,12 +67,11 @@ public class Course {
     /**
      * Checks to see if the final score is over 60.
      *
-     * @param finalScore the final mark that is obtained.
      * @return true or false based on if you obtained over 60.
      */
-    public boolean isPassed(double finalScore) {
+    public boolean isPassed() {
         double passMark = 60; // 60%
-        return finalScore > passMark;
+        return calcFinalScore() > passMark;
     }
 
     /**
@@ -84,7 +81,7 @@ public class Course {
      * @return true or false based on if they are equal.
      */
     public boolean equals(Course anotherCourse) {
-        return this.courseName == anotherCourse.courseName
+        return this.courseName.equals(anotherCourse.courseName)
                 && this.credit == anotherCourse.credit
                 && this.examScore == anotherCourse.examScore
                 && this.assignmentScore == anotherCourse.assignmentScore;
@@ -103,7 +100,7 @@ public class Course {
         message += String.format("%-10s: %.2f\n", "Assignment Score",
                 assignmentScore);
         message += String.format("%-10s: %.2f\n", "Final Score",
-                calcFinalScore(examScore, assignmentScore));
+                calcFinalScore());
 
         return message;
     }
