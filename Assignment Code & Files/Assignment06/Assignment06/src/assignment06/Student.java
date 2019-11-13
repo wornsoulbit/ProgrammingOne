@@ -71,15 +71,14 @@ public class Student {
     }
 
     public boolean isValidEmail() {
-
         int atSignIdx = this.email.indexOf("@");
         int atDotIdx = this.email.lastIndexOf("."); // ww.alex@gmail.qc.ca
         
         if (atSignIdx == -1 || atDotIdx == -1) 
             return false;
         
-        return this.email.indexOf("@") != 0 && atDotIdx - atSignIdx != 1 
-                && this.email.length() -1 - atDotIdx != 0;
+        return atSignIdx != 0 && atDotIdx - atSignIdx != 1 
+                && atDotIdx != this.email.length() - 1;
         }
 
     
@@ -116,8 +115,7 @@ public class Student {
         message += String.format("%-29s", "Name");
         message += String.format("%-10s", "Credit");
         message += String.format("%s", "Score");
-        message += String.format("\n-----------------------------------------"
-                + "-------------------\n");
+        message += String.format("\n------------------------------------------------------------\n");
 
         message += String.format("\n%-15s: %-27s %-9.1f %.2f", "Course 1",
                 course1.getCourseName(), course1.getCredit(),
