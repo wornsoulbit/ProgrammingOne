@@ -15,7 +15,7 @@ public class Student {
     private Course course3;
 
     /**
-     *
+     * Default constructor of a Student.
      */
     public Student() {
         this.name = "";
@@ -27,10 +27,11 @@ public class Student {
     }
 
     /**
-     *
-     * @param name
-     * @param gender
-     * @param email
+     * Constructor of a student with a name, gender and email defined.
+     * 
+     * @param name the name.
+     * @param gender the gender.
+     * @param email the email.
      */
     public Student(String name, String gender, String email) {
         this.name = name;
@@ -42,13 +43,15 @@ public class Student {
     }
 
     /**
-     *
-     * @param name
-     * @param gender
-     * @param email
-     * @param course1
-     * @param course2
-     * @param course3
+     * Constructor of a student with a name, gender, email, course1, course2
+     * and course3 defined.
+     * 
+     * @param name the name.
+     * @param gender the gender.
+     * @param email the email.
+     * @param course1 Course 1.
+     * @param course2 Course 2.
+     * @param course3 Course 3.
      */
     public Student(String name, String gender, String email, Course course1,
             Course course2, Course course3) {
@@ -61,8 +64,9 @@ public class Student {
     }
 
     /**
-     *
-     * @return
+     * Calculates how many courses have been passed.
+     * 
+     * @return the number of courses passed.
      */
     public int calcPassedCourseNum() {
         int passedCourses = 0;
@@ -79,8 +83,9 @@ public class Student {
     }
 
     /**
-     *
-     * @return
+     * Calculates how many credits a student gets if they pass a course.
+     * 
+     * @return the total credits that a student got.
      */
     public double calcTotalCredit() {
         double totalCredits = 0;
@@ -97,8 +102,9 @@ public class Student {
     }
 
     /**
-     *
-     * @return
+     * Checks to see if the email inputed is valid or not.
+     * 
+     * @return if its a valid email it'll return true, otherwise false.
      */
     public boolean isValidEmail() {
         int atSignIdx = this.email.indexOf("@");
@@ -112,8 +118,9 @@ public class Student {
         }
 
     /**
-     *
-     * @param otherStudent
+     * Copy constructor.
+     * 
+     * @param otherStudent the copied circle.
      */
     public Student(Student otherStudent) {
         this.name = otherStudent.name;
@@ -125,8 +132,9 @@ public class Student {
     }
 
     /**
-     *
-     * @return
+     * A copy of Student.
+     * 
+     * @return a copy of a Student.
      */
     @Override
     public Student clone() {
@@ -134,9 +142,10 @@ public class Student {
     }
 
     /**
-     *
-     * @param otherStudent
-     * @return
+     * Checks if two students are the same.
+     * 
+     * @param otherStudent the other student to compare.
+     * @return to check if two students are the same.
      */
     public boolean equals(Student otherStudent) {
         return this.name.equals(otherStudent.name)
@@ -148,8 +157,9 @@ public class Student {
     }
 
     /**
-     *
-     * @return
+     * To generate a string to represent the student.
+     * 
+     * @return a generated string.
      */
     @Override
     public String toString() {
@@ -181,96 +191,108 @@ public class Student {
     }
 
     /**
-     *
-     * @return
+     * Getter.
+     * 
+     * @return the name.
      */
     public String getName() {
         return name;
     }
 
     /**
-     *
-     * @return
+     * Getter.
+     * 
+     * @return the gender.
      */
     public String getGender() {
         return gender;
     }
 
     /**
-     *
-     * @return
+     * Getter.
+     * 
+     * @return the email.
      */
     public String getEmail() {
         return email;
     }
 
     /**
-     *
-     * @return
+     * Getter.
+     * 
+     * @return the values of course1.
      */
     public Course getCourse1() {
         return course1;
     }
 
     /**
-     *
-     * @return
+     * Getter.
+     * 
+     * @return the values of course2.
      */
     public Course getCourse2() {
         return course2;
     }
 
     /**
-     *
-     * @return
+     * Getter.
+     * 
+     * @return the values of course3.
      */
     public Course getCourse3() {
         return course3;
     }
 
     /**
-     *
-     * @param name
+     * Setter.
+     * 
+     * @param name the name.
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     *
-     * @param gender
+     * Setter.
+     * 
+     * @param gender the gender.
      */
     public void setGender(String gender) {
         this.gender = gender;
     }
 
     /**
-     *
-     * @param email
+     * Setter.
+     * 
+     * @param email the email.
      */
     public void setEmail(String email) {
         this.email = email;
     }
 
     /**
-     *
-     * @param course1
+     * Setter.
+     * 
+     * @param course1 the first course.
      */
     public void setCourse1(Course course1) {
         this.course1 = course1;
     }
 
     /**
-     *
-     * @param course2
+     * Setter.
+     * 
+     * @param course2 the second course.
      */
     public void setCourse2(Course course2) {
         this.course2 = course2;
     }
 
     /**
-     *
-     * @param course3
+     * Setter.
+     * 
+     * @param course3 the third course.
      */
     public void setCourse3(Course course3) {
         this.course3 = course3;
