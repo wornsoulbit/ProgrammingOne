@@ -108,7 +108,7 @@ public class Student {
      */
     public boolean isValidEmail() {
         int atSignIdx = this.email.indexOf("@");
-        int atDotIdx = this.email.lastIndexOf("."); // ww.alex@gmail.qc.ca
+        int atDotIdx = this.email.lastIndexOf("."); 
         
         if (atSignIdx == -1 || atDotIdx == -1) 
             return false;

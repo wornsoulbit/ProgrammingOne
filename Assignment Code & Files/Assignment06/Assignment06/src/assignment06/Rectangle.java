@@ -18,15 +18,17 @@ public class Rectangle {
      * the length.
      */
     public Rectangle() {
-        int generatedNums = 10; //How many numbers will be generated e.g. [0, 9]
+        int generatedNums = 10; //How many numbers will be generated e.g. [0, 10[
         int minNum = 1; //The minimum number that is generated e.g. [1, 10]
         Random rand = new Random();
 
         this.length = rand.nextInt(generatedNums) + minNum;
         this.width = rand.nextInt(generatedNums) + minNum;
 
-        if (this.length > this.width) {
+        if (this.width < this.length) { 
+            double temp = this.width; 
             this.width = this.length;
+            this.length = temp;
         }
     }
 
