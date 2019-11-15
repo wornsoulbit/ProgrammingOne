@@ -9,7 +9,7 @@ public class Dog {
     private String name;
     private int age;
     private boolean alive;
-    private static int maxAge = 15;
+    private final static int MAX_AGE = 15;
 
     public Dog() {
         this.name = "";
@@ -24,7 +24,7 @@ public class Dog {
     }
 
     public boolean isAgeValid(int age) {
-        return age <= maxAge;
+        return age <= MAX_AGE;
     }
 
     public Dog(Dog anotherDog) {
@@ -49,7 +49,7 @@ public class Dog {
         if (!alive) 
             return;
         
-        if (age == maxAge) {
+        if (age == MAX_AGE) {
             alive = false;
             return;
         }
