@@ -28,11 +28,11 @@ public class Book {
         this.price = 0;
     }
 
-    public Book(String title, String author, String publisher, String ISBN, double price) {
+    public Book(String title, String author, String publisher, String isbn, double price) {
         this.title = title;
         this.author = author;
         this.publisher = publisher;
-        this.isbn = ISBN;
+        this.isbn = isbn;
         this.price = price;
     }
 
@@ -44,10 +44,26 @@ public class Book {
         this.price = anotherBook.price;   
     }
     
+    public int checkIsbnStatus(String isbn) {
+        boolean isIsbn13 = false;
+        if (isbn.length() == 17) {
+            isIsbn13 = true;
+            if (!isbn.substring(0, 4).equals("978-"))
+                return -1;
+            else
+                isbn = isbn.substring(4);
+        }
+        
+        if (isbn.indexOf("-") != 1) {
+            return -1;
+        }
+        String newIsbn = this.isbn.substring(2, this.isbn.lastIndexOf("-"));
+        return newIsbn.indexOf("-") != newIsbn.length() - 1 && newIsbn.indexOf("-") > 1 ? 0 : -1;
+    }
+    
     public String toTitleCase(String strIn) {
         if (strIn.isEmpty())
             return "";
-        
         String strOut = "";
         while (strIn.indexOf(' ') != -1) {
             strOut += wordToTitleCase(strIn.substring(0, strIn.indexOf(' ')).trim()) + " ";
