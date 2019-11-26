@@ -1,7 +1,8 @@
 package book;
 
 /**
- *
+ * A class of a book.
+ * 
  * @author Alex Vasil
  */
 public class Book {
@@ -46,6 +47,7 @@ public class Book {
     
     public int checkIsbnStatus(String isbn) {
         boolean isIsbn13 = false;
+        
         if (isbn.length() == 17) {
             isIsbn13 = true;
             if (!isbn.substring(0, 4).equals("978-"))
@@ -57,8 +59,13 @@ public class Book {
         if (isbn.indexOf("-") != 1) {
             return -1;
         }
-        String newIsbn = this.isbn.substring(2, this.isbn.lastIndexOf("-"));
-        return newIsbn.indexOf("-") != newIsbn.length() - 1 && newIsbn.indexOf("-") > 1 ? 0 : -1;
+        return isIsbn13 ? (isValidIsbn10(isbn) ? 1 : -1) : (isValidIsbn10(isbn) ? 0 : -1);
+    }
+    
+    public boolean isValidIsbn10(String isbn) {
+        int length = 10; //Length of the isbn number after the first and last dashes are cut off.
+        String newIsbn = isbn.substring(2, isbn.lastIndexOf("-"));
+        return newIsbn.indexOf("-") != newIsbn.length() - 1 && newIsbn.indexOf("-") > 1 && length > newIsbn.length();
     }
     
     public String toTitleCase(String strIn) {
