@@ -59,7 +59,11 @@ public class Book {
         if (isbn.indexOf("-") != 1) {
             return -1;
         }
-        return isIsbn13 ? (isValidIsbn10(isbn) ? 1 : -1) : (isValidIsbn10(isbn) ? 0 : -1);
+//        return isIsbn13 ? (isValidIsbn10(isbn) ? 1 : -1) : (isValidIsbn10(isbn) ? 0 : -1);
+        if (!isValidIsbn10(isbn)) 
+            return -1;
+        else 
+            return isIsbn13 ? 1 : 0;
     }
     
     public boolean isValidIsbn10(String isbn) {
