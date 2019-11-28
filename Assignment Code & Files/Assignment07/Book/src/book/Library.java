@@ -14,6 +14,7 @@ public class Library {
      * The default constructor of the library.
      */
     public Library() {
+        library = new ArrayList<>();
         library.add(new Book("New book!"));
         library.add(new Book("New book2!"));
         library.add(new Book("New book3!"));
