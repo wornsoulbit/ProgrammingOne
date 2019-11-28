@@ -55,6 +55,19 @@ public class Book {
     }
     
     /**
+     * A copy of a book.
+     * 
+     * @param anotherBook the book to be copied.
+     */
+    public Book(Book anotherBook) {
+        this.title = anotherBook.title;
+        this.author = anotherBook.author;
+        this.publisher = anotherBook.publisher;
+        this.isbn = anotherBook.isbn;
+        this.price = anotherBook.price;   
+    }
+    
+    /**
      * Checks the status of the ISBN number.
      * 
      * @param isbn the isbn number of the book.
@@ -148,19 +161,6 @@ public class Book {
                 && publisher.equals(anotherBook.publisher)
                 && price == anotherBook.price
                 && isbn.equals(anotherBook.isbn);
-    }
-    
-    /**
-     * A copy of a book.
-     * 
-     * @param anotherBook the book to be copied.
-     */
-    public Book(Book anotherBook) {
-        this.title = anotherBook.title;
-        this.author = anotherBook.author;
-        this.publisher = anotherBook.publisher;
-        this.isbn = anotherBook.isbn;
-        this.price = anotherBook.price;   
     }
     
     /**

@@ -29,15 +29,26 @@ public class Library {
     public Library(ArrayList<Book> library) {
         this.library = library;
     }
+    
+    public Library(Library anotherLibrary) {
+        this.library = anotherLibrary.library;
+    }
 
-//    /**
-//     *
-//     * @param keyword
-//     * @return
-//     */
-//    public Library searchLibrary(String keyword) {
-//        
-//    }
+    /**
+     *
+     * @param keyword
+     * @return
+     */
+    public ArrayList<Book> searchLibrary(String keyword) {
+        ArrayList<Book> searchResult = new ArrayList<>();
+        keyword = keyword.toLowerCase();
+        for (int i = 0; i < library.size(); i++) {
+            if (library.get(i).getAuthor().toLowerCase().contains(keyword) || 
+                    library.get(i).getTitle().toLowerCase().contains(keyword)) 
+                searchResult.add(library.get(i));
+        }
+        return searchResult;
+    }
     
     /**
      *
@@ -46,10 +57,6 @@ public class Library {
      */
     public boolean equals(Library anotherLibrary) {
         return library.equals(anotherLibrary.library);
-    }
-    
-    public Library(Library anotherLibrary) {
-        
     }
     
     public Library clone() {
