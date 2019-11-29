@@ -85,10 +85,8 @@ public class Book {
                 isbn = isbn.substring(4);
         }
         
-        if (isbn.indexOf("-") != 1) {
+        if (isbn.indexOf("-") != 1) 
             return -1;
-        }
-        
         if (!isValidIsbn10(isbn)) 
             return -1;
         else 
@@ -105,6 +103,8 @@ public class Book {
         int validIsbn10Length = 13; // Valid length of isbn10 number.
         
         if (isbn.length() > validIsbn10Length)
+            return false;
+        if (isbn.lastIndexOf("-") != 11) 
             return false;
         
         String newIsbn = isbn.substring(2, isbn.lastIndexOf("-"));        
