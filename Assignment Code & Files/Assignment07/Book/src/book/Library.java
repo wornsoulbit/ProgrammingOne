@@ -28,7 +28,7 @@ public class Library {
      * @param library 
      */
     public Library(ArrayList<Book> library) {
-        this.library = library = new ArrayList<>();
+        this.library = library;
     }
     
     /**
@@ -87,7 +87,7 @@ public class Library {
     }
     
     /**
-     * Getter of ArrayList<Book>.
+     * Getter of library.
      * 
      * @return the library.
      */
