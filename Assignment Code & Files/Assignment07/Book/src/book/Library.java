@@ -32,7 +32,7 @@ public class Library {
     }
     
     /**
-     * A soft copy of a library.
+     * A shallow copy of a library.
      * 
      * @param anotherLibrary the library to be copied.
      */
