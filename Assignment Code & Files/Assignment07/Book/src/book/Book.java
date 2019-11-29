@@ -135,8 +135,9 @@ public class Book {
     }
     
     /**
+     * To string method: Prints the title, author, publisher, price and isbn number.
      * 
-     * @return 
+     * @return a string thats been pre-formated.
      */
     @Override
     public String toString() {

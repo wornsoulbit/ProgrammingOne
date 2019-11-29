@@ -28,17 +28,23 @@ public class Library {
      * @param library 
      */
     public Library(ArrayList<Book> library) {
-        this.library = library;
+        this.library = library = new ArrayList<>();
     }
     
+    /**
+     * A soft copy of a library.
+     * 
+     * @param anotherLibrary the library to be copied.
+     */
     public Library(Library anotherLibrary) {
         this.library = anotherLibrary.library;
     }
 
     /**
-     *
-     * @param keyword
-     * @return
+     * Searches in the array list for any book with the keyword.
+     * 
+     * @param keyword the word that is being searched for in the array.
+     * @return the books that contains the keyword.
      */
     public ArrayList<Book> searchLibrary(String keyword) {
         ArrayList<Book> searchResult = new ArrayList<>();
@@ -52,34 +58,47 @@ public class Library {
     }
     
     /**
-     *
-     * @param anotherLibrary
-     * @return
+     * Checks if two libraries are equal to each other.
+     * 
+     * @param anotherLibrary the library thats being compared.
+     * @return if the two libraries are equal to each other.
      */
     public boolean equals(Library anotherLibrary) {
         return library.equals(anotherLibrary.library);
     }
     
+    /**
+     * A copy of a library.
+     * 
+     * @return a new library as a constructor.
+     */
     public Library clone() {
         return new Library(this);
     }
     
+    /**
+     * Default to string method.
+     * 
+     * @return a string with the library data.
+     */
     @Override
     public String toString() {
         return "Library{" + "library=" + library + '}';
     }
     
     /**
-     *
-     * @return
+     * Getter of ArrayList<Book>.
+     * 
+     * @return the library.
      */
     public ArrayList<Book> getLibrary() {
         return library;
     }
 
     /**
-     *
-     * @param library
+     * Setter of a library.
+     * 
+     * @param library 
      */
     public void setLibrary(ArrayList<Book> library) {
         this.library = library;
