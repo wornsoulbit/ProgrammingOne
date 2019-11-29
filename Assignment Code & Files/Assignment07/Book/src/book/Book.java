@@ -102,9 +102,14 @@ public class Book {
      * @return true or false, based on if its a valid isbn number.
      */
     public boolean isValidIsbn10(String isbn) {
-        int length = 10; //Length of the isbn number after the first and last dashes are cut off.
-        String newIsbn = isbn.substring(2, isbn.lastIndexOf("-"));
-        return newIsbn.indexOf("-") != newIsbn.length() - 1 && newIsbn.indexOf("-") > 1 && length > newIsbn.length();
+        int validIsbn10Length = 13; // Valid length of isbn10 number.
+        
+        if (isbn.length() > validIsbn10Length)
+            return false;
+        
+        String newIsbn = isbn.substring(2, isbn.lastIndexOf("-"));        
+        return newIsbn.indexOf("-") != newIsbn.length() - 1 
+                && newIsbn.indexOf("-") > 1;
     }
     
     /**
