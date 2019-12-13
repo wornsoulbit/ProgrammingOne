@@ -1,0 +1,44 @@
+Alex Vasil
+
+1. The getter gets the value of the object, while setters set the value of the object.
+
+2. A static data member belongs to the class, while a non-static data member belongs to the object.
+
+3. 
+public void setName(String name) {
+	this.name = name;
+}
+
+4. The default constructor is the constructor that's used when no values are entered. It's called default because it's always the initial constructor that's used.
+
+5. For a primitive data type its stored in one cell, while an object is stored in two parts the location of the object in the memory and the data of the object.
+
+6. 
+public Example(Example anotherExample) {
+	this.name = anotherExample.name;
+	this.age = anotherExample.age;
+}
+
+public Example clone() {
+	return new Example(this);
+}
+
+The differences between the two is that the shallow copy only copies the values in the constructor while the deep copy copies the entire constructor and creates a new one with the values in the existing constructor.
+
+7. 
+public Dog() {
+	this.name = "Clare";
+	this.age = 2;
+}
+
+8. 
+@Override
+public void toString() {
+	String strOut = "";
+	strOut += String.format("Hello, my name is %s, I am %d years old\n", name, age);
+	return strOut;
+}
+
+9. Yes you can use c1.toString() because the clock has a value in it. For a null Clock c2 you can't use it because there is no data in the clock.
+
+10. The reason is because you want to test your code for as many edge cases as possible, and possible special cases which may break the code. 
